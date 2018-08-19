@@ -41,5 +41,6 @@ Other examples can be found in example/ folder.
 
  - Add gtest
  - Add write functionality
+ - Matrix type support
  - Python, Java, ObjC wrappers
  - Add crypt and convert to binary
