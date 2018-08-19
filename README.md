@@ -1,5 +1,5 @@
 # Yet Another Config Library for C++
-#
+
 ### About
 YACL is library for operating configs with large and complex hierarchy. Library designed to be as simple as possible to read config and operate with them in code
   
