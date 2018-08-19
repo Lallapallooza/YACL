@@ -1,10 +1,10 @@
 # Yet Another Config Library for C++
 
 ### About
-YACL is library for operating configs with large and complex hierarchy. Library designed to be as simple as possible to read config and operate with them in code
+YACL is a library for operating configs with large and complex hierarchy. Library is designed to be as simple as possible to read configs and operate on them in code.
   
 ### Installation
-YACL using cmake to build project.
+YACL is using cmake to build the project.
 
 Build example provided below
 ```sh
