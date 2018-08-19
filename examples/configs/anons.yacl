@@ -1,0 +1,15 @@
+{ 
+	url = "https://github.com/Lallapallooza";
+	lib_name = "YACL";
+	version = "0.0.1.100500";
+},
+{ 
+	url = "https://github.com/Lallapallooza";
+	lib_name = "YACL";
+	version = "0.0.1.100501";
+},
+{ 
+	url = "https://github.com/Lallapallooza";
+	lib_name = "YACL";
+	version = "0.0.1.100502";
+},

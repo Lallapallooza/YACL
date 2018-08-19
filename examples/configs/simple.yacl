@@ -1,0 +1,3 @@
+var1 = 50;
+var2 = "str with spaces";
+var3 = 'single quotes ok too';

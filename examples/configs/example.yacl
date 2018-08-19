@@ -1,0 +1,32 @@
+main = {
+  some_inner = { 
+    more_inner = { 
+      int_arr = [2,3,-4,5,6]; 
+      bool_arr = [true, false, true]; 
+      float_arr = [2.4,7.4, 8.1,-14.2];
+      str_arr = [ "str1","str1",  "str2"]; 
+    }       
+  },
+  
+  { some  = 10; other  = 50; },
+  { some1 = 10; other1 = 50; },
+  { some2 = 10; other2 = 50; },
+  { some  = 10; other1 = 50; },
+}, 
+
+other_main = {
+  kek1 = true;
+  kek2 = "stroka";
+  { anon_inner = { 
+    value = 50; 
+    value1 = 3000; 
+    } 
+  },
+
+  {
+    anon_can_have_diff_fields = { 
+      kek1 = -321312;
+      kek2 = false;
+    }
+  }
+}
