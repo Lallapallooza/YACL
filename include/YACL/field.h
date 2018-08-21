@@ -16,7 +16,7 @@ namespace yacl {
  * \brief YACL Field class, that contains simple types of config
  */
 class Field {
- public:
+public:
   /**
    * \brief Default constructor deleted
    */
@@ -105,42 +105,28 @@ class Field {
   // getValue specializations
 
   template <class T, TEMPLATE_IS_SAME(T, int)>
-  inline int getValue() const noexcept {
-    return int_value;
-  }
+  int getValue() const noexcept { return int_value; }
 
   template <class T, TEMPLATE_IS_SAME(T, float)>
-  inline float getValue() const noexcept {
-    return float_value;
-  }
+  float getValue() const noexcept { return float_value; }
 
   template <class T, TEMPLATE_IS_SAME(T, bool)>
-  inline bool getValue() const noexcept {
-    return bool_value;
-  }
+  bool getValue() const noexcept { return bool_value; }
 
   template <class T, TEMPLATE_IS_SAME(T, std::string)>
-  inline std::string getValue() const noexcept {
-    return *string_value;
-  }
+  std::string getValue() const noexcept { return *string_value; }
 
   template <class T, TEMPLATE_IS_SAME(T, float_vector)>
-  inline float_vector getValue() const noexcept {
-    return *vector_float_value;
-  }
+  float_vector getValue() const noexcept { return *vector_float_value; }
 
   template <class T, TEMPLATE_IS_SAME(T, int_vector)>
-  inline int_vector getValue() const noexcept {
-    return *vector_int_value;
-  }
+  int_vector getValue() const noexcept { return *vector_int_value; }
 
   template <class T, TEMPLATE_IS_SAME(T, bool_vector)>
-  inline bool_vector getValue() const noexcept {
-    return *vector_bool_value;
-  }
+  bool_vector getValue() const noexcept { return *vector_bool_value; }
 
   template <class T, TEMPLATE_IS_SAME(T, str_vector)>
-  inline str_vector getValue() const noexcept {
+  str_vector getValue() const noexcept {
     // manually copy strings
     std::vector<std::string> copy;
     for (const std::string *str_ptr : *vector_string_value) {
@@ -150,7 +136,7 @@ class Field {
     return copy;
   }
 
- private:
+private:
   /**
    * \brief Support function for operator overloading
    * \tparam T type supported by ContentType, for example int, float, str_vector
@@ -167,14 +153,50 @@ class Field {
    * \param str string ptr to be updated, it's can't be nullptr
    */
   template <class T, TEMPLATE_IS_NOT_SAME(T, std::vector<std::string *>*)>
-  void updateStringWithVector(T vector, std::string *str) const;
+  void updateStringWithVector(T vector, std::string *str) const {
+    (*str) += "size = " + std::to_string(vector->size()) + ", content = [ ";
+    if (vector->size() < 7) {
+      for (size_t i = 0; i < vector->size() - 1; ++i) {
+        (*str) += std::to_string((*vector)[i]) + ", ";
+      }
+      (*str) += std::to_string((*vector).back());
+    } else {
+      for (size_t i = 0; i < 3; ++i) {
+        (*str) += std::to_string((*vector)[i]) + ", ";
+      }
+      (*str) += "... ";
+      for (size_t i = vector->size() - 4; i < vector->size() - 1; ++i) {
+        (*str) += std::to_string((*vector)[i]) + ", ";
+      }
+      (*str) += std::to_string((*vector).back());
+    }
+    (*str) += " ]";
+  }
 
   /**
    * \brief updateStringWithVector specialization for str_vector
    */
   template <class T, TEMPLATE_IS_SAME(T, std::vector<std::string *>*)>
   void updateStringWithVector(T vector,
-                              std::string *str) const;
+                              std::string *str) const {
+
+    (*str) += "size = " + std::to_string(vector->size()) + ", content = [ ";
+    if (vector->size() < 6) {
+      for (size_t i = 0; i < vector->size() - 1; ++i) {
+        (*str) += *((*vector)[i]) + ", ";
+      }
+      (*str) += *((*vector).back());
+    } else {
+      for (size_t i = 0; i < 3; ++i) { (*str) += *((*vector)[i]) + ", "; }
+      (*str) += " ... ";
+      for (size_t i = vector->size() - 4; i < vector->size() - 1; ++i) {
+        (*str) += *((*vector)[i]) + ", ";
+      }
+      (*str) += *((*vector).back());
+    }
+    (*str) += " ]";
+
+  }
 
   /**
    * \brief Deallocate union field if required
@@ -210,60 +232,16 @@ class Field {
 
 template <class T>
 Field::Field(const std::string &name, const T &value) noexcept
-    : field_name(name) {
-  setValue(value);
-}
+  : field_name(name) { setValue(value); }
 
 template <class T>
 T Field::genericOperator() const {
   if (type != typeToContentTypeEnum<T>())
     throw YACLException(
-        formatException(typeToString<T>(), runtimeContentToString(type)));
+                        formatException(typeToString<T>(),
+                                        runtimeContentToString(type)));
   return getValue<T>();
 }
-
-template <class T, TEMPLATE_IS_NOT_SAME(T, std::vector<std::string*>*)>
-void Field::updateStringWithVector(T vector, std::string *str) const {
-  (*str) += "size = " + std::to_string(vector->size()) + ", content = [ ";
-  if (vector->size() < 7) {
-    for (size_t i = 0; i < vector->size() - 1; ++i) {
-      (*str) += std::to_string((*vector)[i]) + ", ";
-    }
-    (*str) += std::to_string((*vector).back());
-  } else {
-    for (size_t i = 0; i < 3; ++i) {
-      (*str) += std::to_string((*vector)[i]) + ", ";
-    }
-    (*str) += "... ";
-    for (size_t i = vector->size() - 4; i < vector->size() - 1; ++i) {
-      (*str) += std::to_string((*vector)[i]) + ", ";
-    }
-    (*str) += std::to_string((*vector).back());
-  }
-  (*str) += " ]";
-}
-
-template <class T, TEMPLATE_IS_SAME(T, std::vector<std::string *>*)>
-void yacl::Field::updateStringWithVector(T vector, std::string *str) const {
-  (*str) += "size = " + std::to_string(vector->size()) + ", content = [ ";
-  if (vector->size() < 6) {
-    for (size_t i = 0; i < vector->size() - 1; ++i) {
-      (*str) += *((*vector)[i]) + ", ";
-    }
-    (*str) += *((*vector).back());
-  } else {
-    for (size_t i = 0; i < 3; ++i) {
-      (*str) += *((*vector)[i]) + ", ";
-    }
-    (*str) += " ... ";
-    for (size_t i = vector->size() - 4; i < vector->size() - 1; ++i) {
-      (*str) += *((*vector)[i]) + ", ";
-    }
-    (*str) += *((*vector).back());
-  }
-  (*str) += " ]";
-}
-
 
 inline void Field::setValue(const str_vector &value) {
   deallocVectorsAndStringIfNeeded();
@@ -342,4 +320,4 @@ inline void Field::setValue(const float &value) {
 }
 
 
-}  // yacl
+} // yacl

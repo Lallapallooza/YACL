@@ -10,14 +10,13 @@ namespace yacl {
 class YACLException : public std::exception {
 public:
   YACLException(const std::string &message)
-    : msg(std::move(message)) {}
+    : msg(message) {}
 
-  const char *what() const override { return msg.c_str(); }
+  const char *what() const noexcept override { return msg.c_str(); }
 
 private:
   const std::string msg;
 };
-
 
 
 /**
@@ -29,7 +28,7 @@ private:
 static std::string formatException(const char *user_try,
                                    const char *real_type) noexcept {
   const static std::string pattern =
-      "Invalid cast operator, you're trying to get ";
+    "Invalid cast operator, you're trying to get ";
   return std::string(pattern + user_try + ", but current type is " + real_type +
                      '\n');
 }
