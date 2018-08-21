@@ -19,25 +19,6 @@ yacl::Field::~Field() { deallocVectorsAndStringIfNeeded(); }
 const std::string &yacl::Field::getName() const { return field_name; }
 std::string yacl::Field::debugString() const { return toString(); }
 
-template <>
-void yacl::Field::updateStringWithVector<std::vector<std::basic_string<char>*>>(
-  std::vector<std::string*> *vector, std::string *str) const {
-  (*str) += "size = " + std::to_string(vector->size()) + ", content = [ ";
-  if (vector->size() < 6) {
-    for (size_t i = 0; i < vector->size() - 1; ++i) {
-      (*str) += *((*vector)[i]) + ", ";
-    }
-    (*str) += *((*vector).back());
-  } else {
-    for (size_t i = 0; i < 3; ++i) { (*str) += *((*vector)[i]) + ", "; }
-    (*str) += " ... ";
-    for (size_t i = vector->size() - 4; i < vector->size() - 1; ++i) {
-      (*str) += *((*vector)[i]) + ", ";
-    }
-    (*str) += *((*vector).back());
-  }
-  (*str) += " ]";
-}
 
 void yacl::Field::deallocVectorsAndStringIfNeeded() noexcept {
   if (type == ContentType::VECTOR_INT_VALUE

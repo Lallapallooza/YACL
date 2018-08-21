@@ -3,6 +3,16 @@
 #include <YACL/types.h>
 
 namespace yacl {
+
+
+  #define TEMPLATE_IS_SAME(firstT, secondT)                                 \
+  typename std::enable_if<std::is_same<firstT, secondT>::value>::type * = \
+      nullptr
+
+  #define TEMPLATE_IS_NOT_SAME(firstT, secondT)                                 \
+  typename std::enable_if<!std::is_same<firstT, secondT>::value>::type * = \
+      nullptr
+
 /**
  * \brief Generic type to ContentType converter
  * \return ContentType

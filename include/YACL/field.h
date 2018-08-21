@@ -101,9 +101,7 @@ class Field {
   GENERATE_OPERATOR(bool_vector)
   GENERATE_OPERATOR(str_vector)
 
-#define TEMPLATE_IS_SAME(firstT, secondT)                                  \
-  typename std::enable_if<std::is_same<firstT, secondT>::value>::type * = \
-      nullptr
+
   // getValue specializations
 
   template <class T, TEMPLATE_IS_SAME(T, int)>
@@ -168,14 +166,14 @@ class Field {
    * \param vector vector from union
    * \param str string ptr to be updated, it's can't be nullptr
    */
-  template <class T>
-  void updateStringWithVector(T *vector, std::string *str) const;
+  template <class T, TEMPLATE_IS_NOT_SAME(T, std::vector<std::string *>*)>
+  void updateStringWithVector(T vector, std::string *str) const;
 
   /**
    * \brief updateStringWithVector specialization for str_vector
    */
-  template <>
-  void updateStringWithVector(std::vector<std::string *> *vector,
+  template <class T, TEMPLATE_IS_SAME(T, std::vector<std::string *>*)>
+  void updateStringWithVector(T vector,
                               std::string *str) const;
 
   /**
@@ -224,8 +222,8 @@ T Field::genericOperator() const {
   return getValue<T>();
 }
 
-template <class T>
-void Field::updateStringWithVector(T *vector, std::string *str) const {
+template <class T, TEMPLATE_IS_NOT_SAME(T, std::vector<std::string*>*)>
+void Field::updateStringWithVector(T vector, std::string *str) const {
   (*str) += "size = " + std::to_string(vector->size()) + ", content = [ ";
   if (vector->size() < 7) {
     for (size_t i = 0; i < vector->size() - 1; ++i) {
@@ -244,6 +242,28 @@ void Field::updateStringWithVector(T *vector, std::string *str) const {
   }
   (*str) += " ]";
 }
+
+template <class T, TEMPLATE_IS_SAME(T, std::vector<std::string *>*)>
+void yacl::Field::updateStringWithVector(T vector, std::string *str) const {
+  (*str) += "size = " + std::to_string(vector->size()) + ", content = [ ";
+  if (vector->size() < 6) {
+    for (size_t i = 0; i < vector->size() - 1; ++i) {
+      (*str) += *((*vector)[i]) + ", ";
+    }
+    (*str) += *((*vector).back());
+  } else {
+    for (size_t i = 0; i < 3; ++i) {
+      (*str) += *((*vector)[i]) + ", ";
+    }
+    (*str) += " ... ";
+    for (size_t i = vector->size() - 4; i < vector->size() - 1; ++i) {
+      (*str) += *((*vector)[i]) + ", ";
+    }
+    (*str) += *((*vector).back());
+  }
+  (*str) += " ]";
+}
+
 
 inline void Field::setValue(const str_vector &value) {
   deallocVectorsAndStringIfNeeded();
