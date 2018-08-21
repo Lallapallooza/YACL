@@ -1,13 +1,13 @@
 #pragma once
+
 #include <string>
+#include <type_traits>
 
 #include <YACL/exception.h>
 #include <YACL/types.h>
 #include <YACL/types_conversation.h>
 
-
 namespace yacl {
-
 
 #define GENERATE_OPERATOR(for_type) \
   inline operator for_type() const { return genericOperator<for_type>(); }
@@ -16,19 +16,16 @@ namespace yacl {
  * \brief YACL Field class, that contains simple types of config
  */
 class Field {
-public:
-
+ public:
   /**
-   * \brief Default constructor deleted 
+   * \brief Default constructor deleted
    */
   Field() = delete;
-
 
   /**
    * \brief Copy constructor deleted
    */
   Field(const Field &other) = delete;
-
 
   /**
    * \brief operator= deleted
@@ -38,7 +35,7 @@ public:
   /**
    * \brief Move operator= deleted
    */
-  Field& operator=(Field &&other) = delete;
+  Field &operator=(Field &&other) = delete;
 
   /**
    * \brief Constructor with string
@@ -46,28 +43,23 @@ public:
    */
   explicit Field(std::string name) noexcept;
 
-
   /**
-   * \brief Move constructor 
+   * \brief Move constructor
    */
   Field(Field &&other) noexcept;
 
-
   /**
-   * \brief 
-   * \tparam T type supported by ContentType, for example int, float, str_vector etc.
-   * \param name field name
-   * \param value value for field
+   * \brief
+   * \tparam T type supported by ContentType, for example int, float, str_vector
+   * etc. \param name field name \param value value for field
    */
   template <class T>
   Field(const std::string &name, const T &value) noexcept;
 
-
   /**
-   * \brief Destructor 
+   * \brief Destructor
    */
   ~Field();
-
 
   /**
    * \brief Get field name const ref
@@ -75,13 +67,11 @@ public:
    */
   const std::string &getName() const;
 
-
   /**
    * \brief Get string for debug and show field content
    * \return field description
    */
   std::string debugString() const;
-
 
   // setValue specializations for primitive types
   inline void setValue(const bool &value);
@@ -101,7 +91,6 @@ public:
   inline void setValue(const str_initlist &value);
   inline void setValue(const bool_initlist &value);
 
-
   // cast operators overload
   GENERATE_OPERATOR(float)
   GENERATE_OPERATOR(int)
@@ -112,48 +101,67 @@ public:
   GENERATE_OPERATOR(bool_vector)
   GENERATE_OPERATOR(str_vector)
 
-
+#define TEMPLATE_IS_SAME(firstT, secondT)                                  \
+  typename std::enable_if<std::is_same<firstT, secondT>::value>::type * = \
+      nullptr
   // getValue specializations
-  template <class T>
-  T getValue() const noexcept { static_assert(false, "Invalid input type"); }
 
-  template <>
-  inline int getValue<int>() const noexcept;
+  template <class T, TEMPLATE_IS_SAME(T, int)>
+  inline int getValue() const noexcept {
+    return int_value;
+  }
 
-  template <>
-  inline float getValue<float>() const noexcept;
+  template <class T, TEMPLATE_IS_SAME(T, float)>
+  inline float getValue() const noexcept {
+    return float_value;
+  }
 
-  template <>
-  inline bool getValue<bool>() const noexcept;
+  template <class T, TEMPLATE_IS_SAME(T, bool)>
+  inline bool getValue() const noexcept {
+    return bool_value;
+  }
 
-  template <>
-  inline std::string getValue<std::string>() const noexcept;
+  template <class T, TEMPLATE_IS_SAME(T, std::string)>
+  inline std::string getValue() const noexcept {
+    return *string_value;
+  }
 
-  template <>
-  inline float_vector getValue<float_vector>() const noexcept;
+  template <class T, TEMPLATE_IS_SAME(T, float_vector)>
+  inline float_vector getValue() const noexcept {
+    return *vector_float_value;
+  }
 
-  template <>
-  inline int_vector getValue<int_vector>() const noexcept;
+  template <class T, TEMPLATE_IS_SAME(T, int_vector)>
+  inline int_vector getValue() const noexcept {
+    return *vector_int_value;
+  }
 
-  template <>
-  inline bool_vector getValue<bool_vector>() const noexcept;
+  template <class T, TEMPLATE_IS_SAME(T, bool_vector)>
+  inline bool_vector getValue() const noexcept {
+    return *vector_bool_value;
+  }
 
-  template <>
-  str_vector getValue<str_vector>() const noexcept;
+  template <class T, TEMPLATE_IS_SAME(T, str_vector)>
+  inline str_vector getValue() const noexcept {
+    // manually copy strings
+    std::vector<std::string> copy;
+    for (const std::string *str_ptr : *vector_string_value) {
+      copy.emplace_back(*str_ptr);
+    }
 
+    return copy;
+  }
 
-private:
-
+ private:
   /**
-  * \brief Support function for operator overloading
-  * \tparam T type supported by ContentType, for example int, float, str_vector
-  * etc. \return field value
-  */
+   * \brief Support function for operator overloading
+   * \tparam T type supported by ContentType, for example int, float, str_vector
+   * etc. \return field value
+   */
   template <class T>
   T genericOperator() const;
 
   std::string toString() const;
-
 
   /**
    * \brief Update debug string for vectors
@@ -167,15 +175,13 @@ private:
    * \brief updateStringWithVector specialization for str_vector
    */
   template <>
-  void updateStringWithVector(std::vector<std::string*> *vector,
+  void updateStringWithVector(std::vector<std::string *> *vector,
                               std::string *str) const;
-
 
   /**
    * \brief Deallocate union field if required
    */
   void deallocVectorsAndStringIfNeeded() noexcept;
-
 
   // biggest = 4 bytes
   // TODO: int to int32_t
@@ -187,14 +193,13 @@ private:
     std::vector<int> *vector_int_value;
     std::vector<bool> *vector_bool_value;
     std::vector<float> *vector_float_value;
-    std::vector<std::string*> *vector_string_value;
+    std::vector<std::string *> *vector_string_value;
   };
 
   /**
    * \brief field name
    */
   std::string field_name;
-
 
   /**
    * \brief field type
@@ -207,14 +212,15 @@ private:
 
 template <class T>
 Field::Field(const std::string &name, const T &value) noexcept
-  : field_name(name) { setValue(value); }
+    : field_name(name) {
+  setValue(value);
+}
 
 template <class T>
 T Field::genericOperator() const {
   if (type != typeToContentTypeEnum<T>())
     throw YACLException(
-                        formatException(typeToString<T>(),
-                                        runtimeContentToString(type)));
+        formatException(typeToString<T>(), runtimeContentToString(type)));
   return getValue<T>();
 }
 
@@ -239,18 +245,16 @@ void Field::updateStringWithVector(T *vector, std::string *str) const {
   (*str) += " ]";
 }
 
-
 inline void Field::setValue(const str_vector &value) {
   deallocVectorsAndStringIfNeeded();
   type = ContentType::VECTOR_STRING_VALUE;
 
   // need to create each string manually
-  vector_string_value = new std::vector<std::string*>();
+  vector_string_value = new std::vector<std::string *>();
 
   for (const std::string &str : value)
     vector_string_value->push_back(new std::string(str));
 }
-
 
 inline void Field::setValue(const int_vector &value) {
   deallocVectorsAndStringIfNeeded();
@@ -296,7 +300,6 @@ inline void Field::setValue(const std::string &value) {
   string_value = new std::string(value);
 }
 
-
 inline void Field::setValue(const int &value) {
   deallocVectorsAndStringIfNeeded();
 
@@ -318,45 +321,5 @@ inline void Field::setValue(const float &value) {
   float_value = value;
 }
 
-template <>
-inline int Field::getValue<int>() const noexcept { return int_value; }
 
-template <>
-inline float Field::getValue<float>() const noexcept { return float_value; }
-
-template <>
-inline bool Field::getValue<bool>() const noexcept { return bool_value; }
-
-template <>
-inline std::string Field::getValue<std::basic_string<char>>() const noexcept {
-  return *string_value;
-}
-
-template <>
-inline float_vector Field::getValue<float_vector>() const noexcept {
-  return *vector_float_value;
-}
-
-template <>
-inline int_vector Field::getValue<int_vector>() const noexcept {
-  return *vector_int_value;
-}
-
-
-template <>
-inline bool_vector Field::getValue<bool_vector>() const noexcept {
-  return *vector_bool_value;
-}
-
-template <>
-inline str_vector Field::getValue<str_vector>() const noexcept {
-
-  // manually copy strings
-  std::vector<std::string> copy;
-  for (const std::string *str_ptr : *vector_string_value) {
-    copy.emplace_back(*str_ptr);
-  }
-
-  return copy;
-}
-} // yacl
+}  // yacl

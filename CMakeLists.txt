@@ -1,6 +1,9 @@
 cmake_minimum_required(VERSION 3.10 FATAL_ERROR)
 
 set(library_name libyacl)
+
+set(CMAKE_CXX_STANDARD 11)
+
 project(${library_name})
 
 set(library_obj ${library_name}_obj)

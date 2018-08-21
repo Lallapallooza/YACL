@@ -8,7 +8,7 @@ namespace yacl {
  * \return ContentType
  */
 template <class T>
-ContentType typeToContentTypeEnum() noexcept {
+inline ContentType typeToContentTypeEnum() noexcept {
   static_assert(false, "Invalid input type in typeToContentTypeEnum");
   return ContentType::NOT_INIT;
 }
@@ -18,7 +18,7 @@ ContentType typeToContentTypeEnum() noexcept {
  * \return ContentType
  */
 template <>
-static inline ContentType typeToContentTypeEnum<int>() noexcept {
+inline ContentType typeToContentTypeEnum<int>() noexcept {
   return ContentType::INT_VALUE;
 }
 
@@ -27,7 +27,7 @@ static inline ContentType typeToContentTypeEnum<int>() noexcept {
  * \return ContentType
  */
 template <>
-static inline ContentType typeToContentTypeEnum<float>() noexcept {
+inline ContentType typeToContentTypeEnum<float>() noexcept {
   return ContentType::FLOAT_VALUE;
 }
 
@@ -36,7 +36,7 @@ static inline ContentType typeToContentTypeEnum<float>() noexcept {
  * \return ContentType
  */
 template <>
-static inline ContentType typeToContentTypeEnum<bool>() noexcept {
+inline ContentType typeToContentTypeEnum<bool>() noexcept {
   return ContentType::BOOL_VALUE;
 }
 
@@ -45,7 +45,7 @@ static inline ContentType typeToContentTypeEnum<bool>() noexcept {
  * \return ContentType
  */
 template <>
-static inline ContentType typeToContentTypeEnum<std::string>() noexcept {
+inline ContentType typeToContentTypeEnum<std::string>() noexcept {
   return ContentType::STRING_VALUE;
 }
 
@@ -54,7 +54,7 @@ static inline ContentType typeToContentTypeEnum<std::string>() noexcept {
  * \return ContentType
  */
 template <>
-static inline ContentType typeToContentTypeEnum<int_vector>() noexcept {
+inline ContentType typeToContentTypeEnum<int_vector>() noexcept {
   return ContentType::VECTOR_INT_VALUE;
 }
 
@@ -63,7 +63,7 @@ static inline ContentType typeToContentTypeEnum<int_vector>() noexcept {
  * \return ContentType
  */
 template <>
-static inline ContentType typeToContentTypeEnum<float_vector>() noexcept {
+inline ContentType typeToContentTypeEnum<float_vector>() noexcept {
   return ContentType::VECTOR_FLOAT_VALUE;
 }
 
@@ -72,7 +72,7 @@ static inline ContentType typeToContentTypeEnum<float_vector>() noexcept {
  * \return ContentType
  */
 template <>
-static inline ContentType typeToContentTypeEnum<bool_vector>() noexcept {
+inline ContentType typeToContentTypeEnum<bool_vector>() noexcept {
   return ContentType::VECTOR_BOOL_VALUE;
 }
 
@@ -81,7 +81,7 @@ static inline ContentType typeToContentTypeEnum<bool_vector>() noexcept {
  * \return ContentType
  */
 template <>
-static inline ContentType typeToContentTypeEnum<str_vector>() noexcept {
+inline ContentType typeToContentTypeEnum<str_vector>() noexcept {
   return ContentType::VECTOR_STRING_VALUE;
 }
 
@@ -90,7 +90,7 @@ static inline ContentType typeToContentTypeEnum<str_vector>() noexcept {
  * \return type name
  */
 template <class T>
-const char *typeToString() noexcept {
+inline const char *typeToString() noexcept {
   static_assert(false, "Invalid input type in typeToString");
   return "FATAL_ERROR";
 }
@@ -100,7 +100,7 @@ const char *typeToString() noexcept {
  * \return type name
  */
 template <>
-static inline const char *typeToString<int>() noexcept {
+inline const char *typeToString<int>() noexcept {
   return "INT";
 }
 
@@ -109,7 +109,7 @@ static inline const char *typeToString<int>() noexcept {
  * \return type name
  */
 template <>
-static inline const char *typeToString<float>() noexcept {
+inline const char *typeToString<float>() noexcept {
   return "FLOAT";
 }
 
@@ -118,7 +118,7 @@ static inline const char *typeToString<float>() noexcept {
  * \return type name
  */
 template <>
-static inline const char *typeToString<bool>() noexcept {
+inline const char *typeToString<bool>() noexcept {
   return "BOOL";
 }
 
@@ -127,7 +127,7 @@ static inline const char *typeToString<bool>() noexcept {
  * \return type name
  */
 template <>
-static inline const char *typeToString<std::string>() noexcept {
+inline const char *typeToString<std::string>() noexcept {
   return "STRING";
 }
 
@@ -136,7 +136,7 @@ static inline const char *typeToString<std::string>() noexcept {
  * \return type name
  */
 template <>
-static inline const char *typeToString<int_vector>() noexcept {
+inline const char *typeToString<int_vector>() noexcept {
   return "ARRAY INT";
 }
 
@@ -145,7 +145,7 @@ static inline const char *typeToString<int_vector>() noexcept {
  * \return type name
  */
 template <>
-static inline const char *typeToString<float_vector>() noexcept {
+inline const char *typeToString<float_vector>() noexcept {
   return "ARRAY FLOAT";
 }
 
@@ -154,7 +154,7 @@ static inline const char *typeToString<float_vector>() noexcept {
  * \return type name
  */
 template <>
-static inline const char *typeToString<bool_vector>() noexcept {
+inline const char *typeToString<bool_vector>() noexcept {
   return "ARRAY BOOL";
 }
 
@@ -163,7 +163,7 @@ static inline const char *typeToString<bool_vector>() noexcept {
  * \return type name
  */
 template <>
-static inline const char *typeToString<str_vector>() noexcept {
+inline const char *typeToString<str_vector>() noexcept {
   return "ARRAY STRING";
 }
 
