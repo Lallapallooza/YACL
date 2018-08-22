@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['types_2eh',['types.h',['../types_8h.html',1,'']]],
-  ['types_5fconversation_2eh',['types_conversation.h',['../types__conversation_8h.html',1,'']]]
+  ['settings_2eh',['settings.h',['../settings_8h.html',1,'']]],
+  ['settings_5fptr_2ecpp',['settings_ptr.cpp',['../settings__ptr_8cpp.html',1,'']]],
+  ['settings_5fptr_2eh',['settings_ptr.h',['../settings__ptr_8h.html',1,'']]]
 ];

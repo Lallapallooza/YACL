@@ -22,20 +22,24 @@ public:
    */
   Field() = delete;
 
+
   /**
    * \brief Copy constructor deleted
    */
   Field(const Field &other) = delete;
+
 
   /**
    * \brief operator= deleted
    */
   Field &operator=(const Field &other) = delete;
 
+
   /**
    * \brief Move operator= deleted
    */
   Field &operator=(Field &&other) = delete;
+
 
   /**
    * \brief Constructor with string
@@ -43,10 +47,12 @@ public:
    */
   explicit Field(std::string name) noexcept;
 
+
   /**
    * \brief Move constructor
    */
   Field(Field &&other) noexcept;
+
 
   /**
    * \brief
@@ -56,10 +62,12 @@ public:
   template <class T>
   Field(const std::string &name, const T &value) noexcept;
 
+
   /**
    * \brief Destructor
    */
   ~Field();
+
 
   /**
    * \brief Get field name const ref
@@ -67,11 +75,13 @@ public:
    */
   const std::string &getName() const;
 
+
   /**
    * \brief Get string for debug and show field content
    * \return field description
    */
   std::string debugString() const;
+
 
   // setValue specializations for primitive types
   inline void setValue(const bool &value);
@@ -79,17 +89,20 @@ public:
   inline void setValue(const int &value);
   inline void setValue(const float &value);
 
+
   // setValue specializations for vectors
   inline void setValue(const int_vector &value);
   inline void setValue(const float_vector &value);
   inline void setValue(const bool_vector &value);
   inline void setValue(const str_vector &value);
 
+
   // setValue specializations for initializer lists
   inline void setValue(const int_initlist &value);
   inline void setValue(const float_initlist &value);
   inline void setValue(const str_initlist &value);
   inline void setValue(const bool_initlist &value);
+
 
   // cast operators overload
   GENERATE_OPERATOR(float)
@@ -125,6 +138,7 @@ public:
   template <class T, TEMPLATE_IS_SAME(T, bool_vector)>
   bool_vector getValue() const noexcept { return *vector_bool_value; }
 
+
   template <class T, TEMPLATE_IS_SAME(T, str_vector)>
   str_vector getValue() const noexcept {
     // manually copy strings
@@ -145,7 +159,9 @@ private:
   template <class T>
   T genericOperator() const;
 
+
   std::string toString() const;
+
 
   /**
    * \brief Update debug string for vectors
@@ -173,6 +189,7 @@ private:
     (*str) += " ]";
   }
 
+
   /**
    * \brief updateStringWithVector specialization for str_vector
    */
@@ -198,12 +215,15 @@ private:
 
   }
 
+
   /**
    * \brief Deallocate union field if required
    */
   void deallocVectorsAndStringIfNeeded() noexcept;
 
-  // biggest = 4 bytes
+
+  // 4 bytes x86
+  // 8 bytes x64
   // TODO: int to int32_t
   union {
     int int_value = 0;
@@ -216,10 +236,12 @@ private:
     std::vector<std::string *> *vector_string_value;
   };
 
+
   /**
    * \brief field name
    */
   std::string field_name;
+
 
   /**
    * \brief field type

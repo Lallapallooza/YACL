@@ -1,0 +1,82 @@
+.TH "yacl::SettingsUniquePtr" 3 "Wed Aug 22 2018" "YACL" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+yacl::SettingsUniquePtr
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <settings_ptr\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSettingsUniquePtr\fP (\fBSetting\fP *sett)"
+.br
+.ti -1c
+.RI "\fBSettingsUniquePtr\fP ()=delete"
+.br
+.ti -1c
+.RI "\fBSettingsUniquePtr\fP (const \fBSettingsUniquePtr\fP &other)=delete"
+.br
+.ti -1c
+.RI "\fBSettingsUniquePtr\fP & \fBoperator=\fP (const \fBSettingsUniquePtr\fP &other)=delete"
+.br
+.ti -1c
+.RI "\fBSettingsUniquePtr\fP (\fBSettingsUniquePtr\fP &&other) noexcept"
+.br
+.ti -1c
+.RI "\fBSettingsUniquePtr\fP & \fBoperator=\fP (\fBSettingsUniquePtr\fP &&other) noexcept"
+.br
+.ti -1c
+.RI "\fB~SettingsUniquePtr\fP ()"
+.br
+.ti -1c
+.RI "const \fBSetting\fP * \fBoperator\->\fP () const noexcept"
+.br
+.ti -1c
+.RI "const \fBSetting\fP * \fBoperator*\fP () const noexcept"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 7 of file settings_ptr\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "yacl::SettingsUniquePtr::SettingsUniquePtr (\fBSetting\fP * sett)"
+
+.PP
+Definition at line 3 of file settings_ptr\&.cpp\&.
+.SS "yacl::SettingsUniquePtr::SettingsUniquePtr ()\fC [delete]\fP"
+
+.SS "yacl::SettingsUniquePtr::SettingsUniquePtr (const \fBSettingsUniquePtr\fP & other)\fC [delete]\fP"
+
+.SS "yacl::SettingsUniquePtr::SettingsUniquePtr (\fBSettingsUniquePtr\fP && other)\fC [noexcept]\fP"
+
+.PP
+Definition at line 7 of file settings_ptr\&.cpp\&.
+.SS "yacl::SettingsUniquePtr::~SettingsUniquePtr ()"
+
+.PP
+Definition at line 17 of file settings_ptr\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "const \fBSetting\fP* yacl::SettingsUniquePtr::operator* () const\fC [inline]\fP, \fC [noexcept]\fP"
+
+.PP
+Definition at line 24 of file settings_ptr\&.h\&.
+.SS "const \fBSetting\fP* yacl::SettingsUniquePtr::operator\-> () const\fC [inline]\fP, \fC [noexcept]\fP"
+
+.PP
+Definition at line 23 of file settings_ptr\&.h\&.
+.SS "\fBSettingsUniquePtr\fP& yacl::SettingsUniquePtr::operator= (const \fBSettingsUniquePtr\fP & other)\fC [delete]\fP"
+
+.SS "\fByacl::SettingsUniquePtr\fP & yacl::SettingsUniquePtr::operator= (\fBSettingsUniquePtr\fP && other)\fC [noexcept]\fP"
+
+.PP
+Definition at line 10 of file settings_ptr\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for YACL from the source code\&.

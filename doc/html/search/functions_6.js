@@ -1,17 +1,6 @@
 var searchData=
 [
-  ['isarrayofbools',['isArrayOfBools',['../namespaceyacl.html#a2dd72f658c9470e3772e2050245d6f0c',1,'yacl']]],
-  ['isarrayoffloats',['isArrayOfFloats',['../namespaceyacl.html#ab01837481b2a441f27d7405d56e5c4ae',1,'yacl']]],
-  ['isarrayofintegers',['isArrayOfIntegers',['../namespaceyacl.html#ae69d604aaca93d128321ba864fa5c611',1,'yacl']]],
-  ['isarrayofsametype',['isArrayOfSameType',['../namespaceyacl.html#a0f12fcb46b0a9a05fc986759d8ae9c14',1,'yacl']]],
-  ['isarrayofstrings',['isArrayOfStrings',['../namespaceyacl.html#a0d01c59ef0b72ad333f12de5fd5186ce',1,'yacl']]],
-  ['isbool',['isBool',['../namespaceyacl.html#a0e9dddabe592b81f66298d61c7ce89a7',1,'yacl']]],
-  ['ischarclosedforsametokens',['isCharClosedForSameTokens',['../namespaceyacl.html#ab1b5c0c9449b2034fd97734e5c97e89c',1,'yacl']]],
-  ['ischarequalsoneofinthelist',['isCharEqualsOneOfInTheList',['../namespaceyacl.html#ac7a46860e4feed0a707343af5dd63e6f',1,'yacl']]],
-  ['ischaropenedforsametokens',['isCharOpenedForSameTokens',['../namespaceyacl.html#a241385c9d089ec0968be0c37b67b15d2',1,'yacl']]],
-  ['isfieldanon',['isFieldAnon',['../namespaceyacl.html#a201d6314139ef92ba6f77d644cac76f7',1,'yacl']]],
-  ['isfilled',['isFilled',['../classyacl_1_1_setting.html#a143f4d2c45a33e7699e7c0c603d4a7d4',1,'yacl::Setting']]],
-  ['isfloat',['isFloat',['../namespaceyacl.html#a2080dee4254a624246e705e3e8213e96',1,'yacl']]],
-  ['isint',['isInt',['../namespaceyacl.html#abb6b7fb544f2bc88ceaa544441a9d2a6',1,'yacl']]],
-  ['isstring',['isString',['../namespaceyacl.html#a0155e15c104075cdc2f6b949c9a753c1',1,'yacl']]]
+  ['operator_2a',['operator*',['../classyacl_1_1_settings_unique_ptr.html#add14e1d5d4ef44bee0beadf5b561660a',1,'yacl::SettingsUniquePtr']]],
+  ['operator_2d_3e',['operator-&gt;',['../classyacl_1_1_settings_unique_ptr.html#a2db51a8b9380a1362ff3bba367332242',1,'yacl::SettingsUniquePtr']]],
+  ['operator_3d',['operator=',['../classyacl_1_1_field.html#a431ac5fb6e650cf4b68a11ae981769ff',1,'yacl::Field::operator=(const Field &amp;other)=delete'],['../classyacl_1_1_field.html#a8b1e8dddf08eec5ef354f1f5c2802ad4',1,'yacl::Field::operator=(Field &amp;&amp;other)=delete'],['../classyacl_1_1_settings_unique_ptr.html#a1b0efbb305b34b360496d532e9924c6b',1,'yacl::SettingsUniquePtr::operator=(const SettingsUniquePtr &amp;other)=delete'],['../classyacl_1_1_settings_unique_ptr.html#acba71ec3b83d77e296bb5f20bf4c52eb',1,'yacl::SettingsUniquePtr::operator=(SettingsUniquePtr &amp;&amp;other) noexcept']]]
 ];

@@ -1,0 +1,89 @@
+.TH "yacl::Config" 3 "Wed Aug 22 2018" "YACL" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+yacl::Config \- Main YACL config class\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <config\&.h>\fP
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBSettingsUniquePtr\fP \fBparseConfigFromFile\fP (const std::string &path) noexcept"
+.br
+.RI "Parse config from file\&. "
+.ti -1c
+.RI "static \fBSettingsUniquePtr\fP \fBparseConfig\fP (std::string conf) noexcept"
+.br
+.RI "Parse config from string\&. "
+.ti -1c
+.RI "static void \fBprintConfig\fP (const \fBSetting\fP *sett, uint16_t n_tabs=1) noexcept"
+.br
+.RI "Print config rec\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Main YACL config class\&. 
+.PP
+Definition at line 16 of file config\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fByacl::SettingsUniquePtr\fP yacl::Config::parseConfig (std::string conf)\fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+Parse config from string\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIconf\fP raw config 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+config root 
+.RE
+.PP
+
+.PP
+Definition at line 52 of file config\&.cpp\&.
+.SS "\fByacl::SettingsUniquePtr\fP yacl::Config::parseConfigFromFile (const std::string & path)\fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+Parse config from file\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpath\fP file path 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+config root 
+.RE
+.PP
+
+.PP
+Definition at line 44 of file config\&.cpp\&.
+.SS "void yacl::Config::printConfig (const \fBSetting\fP * sett, uint16_t n_tabs = \fC1\fP)\fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+Print config rec\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsett\fP root 
+.br
+\fIn_tabs\fP tabs for formatting 
+.RE
+.PP
+
+.PP
+Definition at line 137 of file config\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for YACL from the source code\&.

@@ -1,0 +1,63 @@
+.TH "src/type_conversation/converter.h" 3 "Wed Aug 22 2018" "YACL" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/type_conversation/converter.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <vector>\fP
+.br
+\fC#include <string>\fP
+.br
+\fC#include <YACL/types\&.h>\fP
+.br
+\fC#include <helper/utils\&.h>\fP
+.br
+
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fByacl\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "std::string \fByacl::strToStr\fP (const std::string &str) noexcept"
+.br
+.RI "Format string 'my str' -> my str\&. "
+.ti -1c
+.RI "int \fByacl::strToInt\fP (const std::string &str) noexcept"
+.br
+.RI "Convert string to int\&. "
+.ti -1c
+.RI "float \fByacl::strToFloat\fP (const std::string &str) noexcept"
+.br
+.RI "Convert string to float\&. "
+.ti -1c
+.RI "bool \fByacl::strToBool\fP (const std::string &str) noexcept"
+.br
+.RI "Convert string to bool\&. "
+.ti -1c
+.RI "int_vector \fByacl::raw_to_vector_ints\fP (const std::string &raw_vector) noexcept"
+.br
+.RI "String to vector int converter\&. "
+.ti -1c
+.RI "float_vector \fByacl::raw_to_vector_floats\fP (const std::string &raw_vector) noexcept"
+.br
+.RI "String to vector float converter\&. "
+.ti -1c
+.RI "str_vector \fByacl::raw_to_vector_strings\fP (const std::string &raw_vector) noexcept"
+.br
+.RI "String to vector string converter\&. "
+.ti -1c
+.RI "bool_vector \fByacl::raw_to_vector_bools\fP (const std::string &raw_vector) noexcept"
+.br
+.RI "String to vector bool converter\&. "
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for YACL from the source code\&.

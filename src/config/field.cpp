@@ -45,21 +45,22 @@ void yacl::Field::deallocVectorsAndStringIfNeeded() noexcept {
 std::string yacl::Field::toString() const {
   std::string str("DebugString for \"" + field_name + "\". Value = <\"");
 
-  if (type == ContentType::INT_VALUE) { str += std::to_string(int_value); } else
-    if (type == ContentType::FLOAT_VALUE
-    ) { str += std::to_string(float_value); } else if (
-      type == ContentType::BOOL_VALUE
-    ) { str += (bool_value ? "true" : "false"); } else if (
-      type == ContentType::STRING_VALUE) { str += *string_value; } else if (
-      type == ContentType::VECTOR_INT_VALUE
-    ) { updateStringWithVector(vector_int_value, &str); } else if (
-      type == ContentType::VECTOR_BOOL_VALUE
-    ) { updateStringWithVector(vector_bool_value, &str); } else if (
-      type == ContentType::VECTOR_FLOAT_VALUE) {
-      updateStringWithVector(vector_float_value, &str);
-    } else if (type == ContentType::VECTOR_STRING_VALUE) {
-      updateStringWithVector(vector_string_value, &str);
-    }
+  if (type == ContentType::INT_VALUE
+  ) { str += std::to_string(int_value); } else if (
+    type == ContentType::FLOAT_VALUE
+  ) { str += std::to_string(float_value); } else if (
+    type == ContentType::BOOL_VALUE
+  ) { str += (bool_value ? "true" : "false"); } else if (
+    type == ContentType::STRING_VALUE) { str += *string_value; } else if (
+    type == ContentType::VECTOR_INT_VALUE
+  ) { updateStringWithVector(vector_int_value, &str); } else if (
+    type == ContentType::VECTOR_BOOL_VALUE
+  ) { updateStringWithVector(vector_bool_value, &str); } else if (
+    type == ContentType::VECTOR_FLOAT_VALUE) {
+    updateStringWithVector(vector_float_value, &str);
+  } else if (type == ContentType::VECTOR_STRING_VALUE) {
+    updateStringWithVector(vector_string_value, &str);
+  }
 
   str += "\">\n";
   return str;

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['msg',['msg',['../classyacl_1_1_y_a_c_l_exception.html#aa7cd0fcbd0e7bd76c881f5dafd847f96',1,'yacl::YACLException']]]
+  ['not_5finit',['NOT_INIT',['../namespaceyacl.html#a994628808c0af8d10900265aea4b166aaca0408a962115a6e199dbac349bd3597',1,'yacl']]]
 ];

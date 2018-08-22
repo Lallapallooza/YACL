@@ -1,0 +1,176 @@
+.TH "yacl::Setting" 3 "Wed Aug 22 2018" "YACL" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+yacl::Setting \- YACL node class\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <settings\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSetting\fP (\fBSetting\fP *base=nullptr, uint16_t dep=0) noexcept"
+.br
+.RI "Constructor with params\&. "
+.ti -1c
+.RI "const \fBField\fP * \fBfield\fP (const std::string &name) const noexcept"
+.br
+.RI "Get field with name if field doesnt exists, std::terminate be called\&. "
+.ti -1c
+.RI "const \fBSetting\fP * \fBsetting\fP (const std::string &name) const noexcept"
+.br
+.RI "Get setting with name if setting doesnt exists, std::terminate be called\&. "
+.ti -1c
+.RI "std::vector< \fBSetting\fP * > \fBanons\fP () const noexcept"
+.br
+.RI "Get all anon fields from node\&. "
+.ti -1c
+.RI "bool \fBisFilled\fP () const noexcept"
+.br
+.RI "Check is setting filled\&. "
+.ti -1c
+.RI "const std::string & \fBgetName\fP () const noexcept"
+.br
+.RI "Get setting name\&. "
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBrecDeleteGraph\fP (\fBSetting\fP *sett)"
+.br
+.RI "Recursively delete graph starting from node\&. "
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBConfig\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+YACL node class\&. 
+.PP
+Definition at line 14 of file settings\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "yacl::Setting::Setting (\fBSetting\fP * base = \fCnullptr\fP, uint16_t dep = \fC0\fP)\fC [inline]\fP, \fC [explicit]\fP, \fC [noexcept]\fP"
+
+.PP
+Constructor with params\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbase\fP parent 
+.br
+\fIdep\fP node depth 
+.RE
+.PP
+
+.PP
+Definition at line 117 of file settings\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "std::vector< \fBSetting\fP * > yacl::Setting::anons () const\fC [inline]\fP, \fC [noexcept]\fP"
+
+.PP
+Get all anon fields from node\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+const vector of anon fields 
+.RE
+.PP
+
+.PP
+Definition at line 142 of file settings\&.h\&.
+.SS "const \fBField\fP * yacl::Setting::field (const std::string & name) const\fC [inline]\fP, \fC [noexcept]\fP"
+
+.PP
+Get field with name if field doesnt exists, std::terminate be called\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP field name 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+const \fBField\fP ptr 
+.RE
+.PP
+
+.PP
+Definition at line 132 of file settings\&.h\&.
+.SS "const std::string & yacl::Setting::getName () const\fC [inline]\fP, \fC [noexcept]\fP"
+
+.PP
+Get setting name\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+setting name 
+.RE
+.PP
+
+.PP
+Definition at line 148 of file settings\&.h\&.
+.SS "bool yacl::Setting::isFilled () const\fC [inline]\fP, \fC [noexcept]\fP"
+
+.PP
+Check is setting filled\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+filled 
+.RE
+.PP
+
+.PP
+Definition at line 146 of file settings\&.h\&.
+.SS "void yacl::Setting::recDeleteGraph (\fBSetting\fP * sett)\fC [inline]\fP, \fC [static]\fP"
+
+.PP
+Recursively delete graph starting from node\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsett\fP node 
+.RE
+.PP
+
+.PP
+Definition at line 120 of file settings\&.h\&.
+.SS "const \fBSetting\fP * yacl::Setting::setting (const std::string & name) const\fC [inline]\fP, \fC [noexcept]\fP"
+
+.PP
+Get setting with name if setting doesnt exists, std::terminate be called\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP setting name 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+const setting ptr 
+.RE
+.PP
+
+.PP
+Definition at line 137 of file settings\&.h\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBConfig\fP\fC [friend]\fP"
+
+.PP
+Definition at line 67 of file settings\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for YACL from the source code\&.

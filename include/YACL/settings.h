@@ -12,7 +12,7 @@ namespace yacl {
  */
 
 class Setting {
- public:
+public:
   /**
    * \brief Constructor with params
    * \param base parent
@@ -20,11 +20,13 @@ class Setting {
    */
   explicit Setting(Setting *base = nullptr, uint16_t dep = 0) noexcept;
 
+
   /**
    * \brief Recursively delete graph starting from node
    * \param sett node
    */
   static void recDeleteGraph(Setting *sett);
+
 
   /**
    * \brief Get field with name
@@ -34,6 +36,7 @@ class Setting {
    */
   inline const Field *field(const std::string &name) const noexcept;
 
+
   /**
    * \brief Get setting with name
    *        if setting doesnt exists, std::terminate be called
@@ -42,11 +45,13 @@ class Setting {
    */
   inline const Setting *setting(const std::string &name) const noexcept;
 
+
   /**
    * \brief Get all anon fields from node
    * \return const vector of anon fields
    */
   inline std::vector<Setting *> anons() const noexcept;
+
 
   /**
    * \brief Check is setting filled
@@ -54,60 +59,68 @@ class Setting {
    */
   inline bool isFilled() const noexcept;
 
+
   /**
    * \brief Get setting name
    * \return setting name
    */
   const std::string &getName() const noexcept;
 
- private:
+private:
   // This class always filling by Config
   // So instead of created dozen methods
   // Just declate friend
   friend class Config;
 
+
   /**
    * \brief Means setting filled or not, need for parsing
    */
-
   bool filled = false;
+
 
   /**
    * \brief Means field anon or names
    */
   bool anon = false;
 
+
   /**
    * \brief Means node depth in graph
    */
   uint16_t depth;
+
 
   /**
    * \brief Parent node
    */
   Setting *father;
 
+
   /**
    * \brief Node name
    */
   std::string setting_name;
+
 
   /**
    * \brief Node primitive fields
    */
   std::map<std::string, Field> fields;
 
+
   /**
    * \brief Node childs
    */
   std::map<std::string, Setting *> inner_graph;
+
 
   /**
    * \brief Node anon childs
    */
   std::vector<Setting *> anon_inner_graph;
 
-  // TODO: delete field
+
   /**
    * \brief Vector where we holding setting while parsing
    */
@@ -115,16 +128,13 @@ class Setting {
 };
 
 inline Setting::Setting(Setting *base, uint16_t dep) noexcept
-    : depth(dep), father(base) {}
+  : depth(dep),
+    father(base) {}
 
 inline void Setting::recDeleteGraph(Setting *sett) {
-  for (const auto &pair : sett->inner_graph) {
-    recDeleteGraph(pair.second);
-  }
+  for (const auto &pair : sett->inner_graph) { recDeleteGraph(pair.second); }
 
-  for (const auto &anons : sett->anon_inner_graph) {
-    recDeleteGraph(anons);
-  }
+  for (const auto &anons : sett->anon_inner_graph) { recDeleteGraph(anons); }
 
   delete sett;
 }
@@ -149,4 +159,4 @@ inline const std::string &Setting::getName() const noexcept {
   return setting_name;
 }
 
-}  // namespace yacl
+} // namespace yacl

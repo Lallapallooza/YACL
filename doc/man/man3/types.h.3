@@ -1,0 +1,69 @@
+.TH "include/YACL/types.h" 3 "Wed Aug 22 2018" "YACL" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+include/YACL/types.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <string>\fP
+.br
+\fC#include <vector>\fP
+.br
+\fC#include <iostream>\fP
+.br
+
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fByacl\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "using \fByacl::int_vector\fP = std::vector< int >"
+.br
+.RI "std::vector<int> alias "
+.ti -1c
+.RI "using \fByacl::float_vector\fP = std::vector< float >"
+.br
+.RI "std::vector<float> alias "
+.ti -1c
+.RI "using \fByacl::str_vector\fP = std::vector< std::string >"
+.br
+.RI "std::vector<std::string> alias "
+.ti -1c
+.RI "using \fByacl::bool_vector\fP = std::vector< bool >"
+.br
+.RI "std::vector<bool> alias "
+.ti -1c
+.RI "using \fByacl::int_initlist\fP = std::initializer_list< int >"
+.br
+.RI "std::initializer_list<int> alias "
+.ti -1c
+.RI "using \fByacl::float_initlist\fP = std::initializer_list< float >"
+.br
+.RI "std::initializer_list<int> alias "
+.ti -1c
+.RI "using \fByacl::str_initlist\fP = std::initializer_list< std::string >"
+.br
+.RI "std::initializer_list<int> alias "
+.ti -1c
+.RI "using \fByacl::bool_initlist\fP = std::initializer_list< bool >"
+.br
+.RI "std::initializer_list<int> alias "
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fByacl::ContentType\fP { \fByacl::ContentType::INT_VALUE\fP = 0, \fByacl::ContentType::BOOL_VALUE\fP, \fByacl::ContentType::FLOAT_VALUE\fP, \fByacl::ContentType::STRING_VALUE\fP, \fByacl::ContentType::VECTOR_INT_VALUE\fP, \fByacl::ContentType::VECTOR_FLOAT_VALUE\fP, \fByacl::ContentType::VECTOR_STRING_VALUE\fP, \fByacl::ContentType::VECTOR_BOOL_VALUE\fP, \fByacl::ContentType::NOT_INIT\fP }"
+.br
+.RI "Supported primitive types\&. "
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for YACL from the source code\&.

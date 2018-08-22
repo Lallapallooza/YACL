@@ -89,9 +89,7 @@ $(document).ready(function(){initNavTree('classyacl_1_1_setting.html','');});
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
-<a href="#pri-attribs">Private Attributes</a> &#124;
-<a href="#friends">Friends</a> &#124;
-<a href="classyacl_1_1_setting-members.html">List of all members</a>  </div>
+<a href="#friends">Friends</a>  </div>
   <div class="headertitle">
 <div class="title">yacl::Setting Class Reference</div>  </div>
 </div><!--header-->
@@ -113,9 +111,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8648b2d32a93bb09233ffd4ade16991e"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classyacl_1_1_setting.html">Setting</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyacl_1_1_setting.html#a8648b2d32a93bb09233ffd4ade16991e">setting</a> (const std::string &amp;name) const noexcept</td></tr>
 <tr class="memdesc:a8648b2d32a93bb09233ffd4ade16991e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get setting with name if setting doesnt exists, std::terminate be called.  <a href="#a8648b2d32a93bb09233ffd4ade16991e">More...</a><br /></td></tr>
 <tr class="separator:a8648b2d32a93bb09233ffd4ade16991e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ce8a6933869fb88af25cff2757abb41"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; <a class="el" href="classyacl_1_1_setting.html">Setting</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyacl_1_1_setting.html#a5ce8a6933869fb88af25cff2757abb41">anons</a> () const noexcept</td></tr>
-<tr class="memdesc:a5ce8a6933869fb88af25cff2757abb41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get all anon fields from node.  <a href="#a5ce8a6933869fb88af25cff2757abb41">More...</a><br /></td></tr>
-<tr class="separator:a5ce8a6933869fb88af25cff2757abb41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30276644eb18f530ce1ac85eaafabe5d"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classyacl_1_1_setting.html">Setting</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyacl_1_1_setting.html#a30276644eb18f530ce1ac85eaafabe5d">anons</a> () const noexcept</td></tr>
+<tr class="memdesc:a30276644eb18f530ce1ac85eaafabe5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get all anon fields from node.  <a href="#a30276644eb18f530ce1ac85eaafabe5d">More...</a><br /></td></tr>
+<tr class="separator:a30276644eb18f530ce1ac85eaafabe5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a143f4d2c45a33e7699e7c0c603d4a7d4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyacl_1_1_setting.html#a143f4d2c45a33e7699e7c0c603d4a7d4">isFilled</a> () const noexcept</td></tr>
 <tr class="memdesc:a143f4d2c45a33e7699e7c0c603d4a7d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check is setting filled.  <a href="#a143f4d2c45a33e7699e7c0c603d4a7d4">More...</a><br /></td></tr>
 <tr class="separator:a143f4d2c45a33e7699e7c0c603d4a7d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -129,36 +127,6 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:a5a56da18e738b5a05b1e817988b03555"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recursively delete graph starting from node.  <a href="#a5a56da18e738b5a05b1e817988b03555">More...</a><br /></td></tr>
 <tr class="separator:a5a56da18e738b5a05b1e817988b03555"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
-Private Attributes</h2></td></tr>
-<tr class="memitem:a882b5d0f16bcabcbd5a564c1afb20f48"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyacl_1_1_setting.html#a882b5d0f16bcabcbd5a564c1afb20f48">filled</a> = false</td></tr>
-<tr class="memdesc:a882b5d0f16bcabcbd5a564c1afb20f48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Means setting filled or not, need for parsing.  <a href="#a882b5d0f16bcabcbd5a564c1afb20f48">More...</a><br /></td></tr>
-<tr class="separator:a882b5d0f16bcabcbd5a564c1afb20f48"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa6de13c0529bd7e41f521b359216cf02"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyacl_1_1_setting.html#aa6de13c0529bd7e41f521b359216cf02">anon</a> = false</td></tr>
-<tr class="memdesc:aa6de13c0529bd7e41f521b359216cf02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Means field anon or names.  <a href="#aa6de13c0529bd7e41f521b359216cf02">More...</a><br /></td></tr>
-<tr class="separator:aa6de13c0529bd7e41f521b359216cf02"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ab48ab1d3702e0b0b44c9b09f8d81ec"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyacl_1_1_setting.html#a8ab48ab1d3702e0b0b44c9b09f8d81ec">depth</a></td></tr>
-<tr class="memdesc:a8ab48ab1d3702e0b0b44c9b09f8d81ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Means node depth in graph.  <a href="#a8ab48ab1d3702e0b0b44c9b09f8d81ec">More...</a><br /></td></tr>
-<tr class="separator:a8ab48ab1d3702e0b0b44c9b09f8d81ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af71f64b1ea53e48024640400972006f9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classyacl_1_1_setting.html">Setting</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyacl_1_1_setting.html#af71f64b1ea53e48024640400972006f9">father</a></td></tr>
-<tr class="memdesc:af71f64b1ea53e48024640400972006f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parent node.  <a href="#af71f64b1ea53e48024640400972006f9">More...</a><br /></td></tr>
-<tr class="separator:af71f64b1ea53e48024640400972006f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a988d2fb17530fbf5181148f2a1da13b2"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyacl_1_1_setting.html#a988d2fb17530fbf5181148f2a1da13b2">setting_name</a></td></tr>
-<tr class="memdesc:a988d2fb17530fbf5181148f2a1da13b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Node name.  <a href="#a988d2fb17530fbf5181148f2a1da13b2">More...</a><br /></td></tr>
-<tr class="separator:a988d2fb17530fbf5181148f2a1da13b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a30af5c274422c2663e3c2c562d9b1f27"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, <a class="el" href="classyacl_1_1_field.html">Field</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyacl_1_1_setting.html#a30af5c274422c2663e3c2c562d9b1f27">fields</a></td></tr>
-<tr class="memdesc:a30af5c274422c2663e3c2c562d9b1f27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Node primitive fields.  <a href="#a30af5c274422c2663e3c2c562d9b1f27">More...</a><br /></td></tr>
-<tr class="separator:a30af5c274422c2663e3c2c562d9b1f27"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abcf434a299eede0b5dca0a280cb96615"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, <a class="el" href="classyacl_1_1_setting.html">Setting</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyacl_1_1_setting.html#abcf434a299eede0b5dca0a280cb96615">inner_graph</a></td></tr>
-<tr class="memdesc:abcf434a299eede0b5dca0a280cb96615"><td class="mdescLeft">&#160;</td><td class="mdescRight">Node childs.  <a href="#abcf434a299eede0b5dca0a280cb96615">More...</a><br /></td></tr>
-<tr class="separator:abcf434a299eede0b5dca0a280cb96615"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a54853d1e0073fa8023a5a67817df79aa"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classyacl_1_1_setting.html">Setting</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyacl_1_1_setting.html#a54853d1e0073fa8023a5a67817df79aa">anon_inner_graph</a></td></tr>
-<tr class="memdesc:a54853d1e0073fa8023a5a67817df79aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Node anon childs.  <a href="#a54853d1e0073fa8023a5a67817df79aa">More...</a><br /></td></tr>
-<tr class="separator:a54853d1e0073fa8023a5a67817df79aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac792fb8e8607035be0054aa72c070c79"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classyacl_1_1_setting.html">Setting</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyacl_1_1_setting.html#ac792fb8e8607035be0054aa72c070c79">inner_graph_vec</a></td></tr>
-<tr class="memdesc:ac792fb8e8607035be0054aa72c070c79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector where we holding setting while parsing.  <a href="#ac792fb8e8607035be0054aa72c070c79">More...</a><br /></td></tr>
-<tr class="separator:ac792fb8e8607035be0054aa72c070c79"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
 <tr class="memitem:ac3da7e21a05bf8852638db7e4dd1b81a"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyacl_1_1_setting.html#ac3da7e21a05bf8852638db7e4dd1b81a">Config</a></td></tr>
@@ -166,6 +134,8 @@ Friends</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>YACL node class. </p>
+
+<p class="definition">Definition at line <a class="el" href="settings_8h_source.html#l00014">14</a> of file <a class="el" href="settings_8h_source.html">settings.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ae98702b1bb47a0bff7ef2b69b2fbf965"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae98702b1bb47a0bff7ef2b69b2fbf965">&#9670;&nbsp;</a></span>Setting()</h2>
@@ -210,11 +180,13 @@ Friends</h2></td></tr>
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="settings_8h_source.html#l00117">117</a> of file <a class="el" href="settings_8h_source.html">settings.h</a>.</p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a5ce8a6933869fb88af25cff2757abb41"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5ce8a6933869fb88af25cff2757abb41">&#9670;&nbsp;</a></span>anons()</h2>
+<a id="a30276644eb18f530ce1ac85eaafabe5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30276644eb18f530ce1ac85eaafabe5d">&#9670;&nbsp;</a></span>anons()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -223,7 +195,7 @@ Friends</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const std::vector&lt; <a class="el" href="classyacl_1_1_setting.html">Setting</a> * &gt; yacl::Setting::anons </td>
+          <td class="memname">std::vector&lt; <a class="el" href="classyacl_1_1_setting.html">Setting</a> * &gt; yacl::Setting::anons </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -238,6 +210,8 @@ Friends</h2></td></tr>
 
 <p>Get all anon fields from node. </p>
 <dl class="section return"><dt>Returns</dt><dd>const vector of anon fields </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="settings_8h_source.html#l00142">142</a> of file <a class="el" href="settings_8h_source.html">settings.h</a>.</p>
 
 </div>
 </div>
@@ -274,6 +248,8 @@ Friends</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>const <a class="el" href="classyacl_1_1_field.html" title="YACL Field class, that contains simple types of config. ">Field</a> ptr </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="settings_8h_source.html#l00132">132</a> of file <a class="el" href="settings_8h_source.html">settings.h</a>.</p>
+
 </div>
 </div>
 <a id="ab75337bde8f6237e17ab81127c905003"></a>
@@ -302,6 +278,8 @@ Friends</h2></td></tr>
 <p>Get setting name. </p>
 <dl class="section return"><dt>Returns</dt><dd>setting name </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="settings_8h_source.html#l00148">148</a> of file <a class="el" href="settings_8h_source.html">settings.h</a>.</p>
+
 </div>
 </div>
 <a id="a143f4d2c45a33e7699e7c0c603d4a7d4"></a>
@@ -329,6 +307,8 @@ Friends</h2></td></tr>
 
 <p>Check is setting filled. </p>
 <dl class="section return"><dt>Returns</dt><dd>filled </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="settings_8h_source.html#l00146">146</a> of file <a class="el" href="settings_8h_source.html">settings.h</a>.</p>
 
 </div>
 </div>
@@ -363,6 +343,8 @@ Friends</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="settings_8h_source.html#l00120">120</a> of file <a class="el" href="settings_8h_source.html">settings.h</a>.</p>
 
 </div>
 </div>
@@ -399,6 +381,8 @@ Friends</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>const setting ptr </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="settings_8h_source.html#l00137">137</a> of file <a class="el" href="settings_8h_source.html">settings.h</a>.</p>
+
 </div>
 </div>
 <h2 class="groupheader">Friends And Related Function Documentation</h2>
@@ -422,222 +406,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="aa6de13c0529bd7e41f521b359216cf02"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa6de13c0529bd7e41f521b359216cf02">&#9670;&nbsp;</a></span>anon</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool yacl::Setting::anon = false</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Means field anon or names. </p>
-
-</div>
-</div>
-<a id="a54853d1e0073fa8023a5a67817df79aa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a54853d1e0073fa8023a5a67817df79aa">&#9670;&nbsp;</a></span>anon_inner_graph</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="classyacl_1_1_setting.html">Setting</a>*&gt; yacl::Setting::anon_inner_graph</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Node anon childs. </p>
-
-</div>
-</div>
-<a id="a8ab48ab1d3702e0b0b44c9b09f8d81ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8ab48ab1d3702e0b0b44c9b09f8d81ec">&#9670;&nbsp;</a></span>depth</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint16_t yacl::Setting::depth</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Means node depth in graph. </p>
-
-</div>
-</div>
-<a id="af71f64b1ea53e48024640400972006f9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af71f64b1ea53e48024640400972006f9">&#9670;&nbsp;</a></span>father</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classyacl_1_1_setting.html">Setting</a>* yacl::Setting::father</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Parent node. </p>
-
-</div>
-</div>
-<a id="a30af5c274422c2663e3c2c562d9b1f27"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a30af5c274422c2663e3c2c562d9b1f27">&#9670;&nbsp;</a></span>fields</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::map&lt;std::string, <a class="el" href="classyacl_1_1_field.html">Field</a>&gt; yacl::Setting::fields</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Node primitive fields. </p>
-
-</div>
-</div>
-<a id="a882b5d0f16bcabcbd5a564c1afb20f48"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a882b5d0f16bcabcbd5a564c1afb20f48">&#9670;&nbsp;</a></span>filled</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool yacl::Setting::filled = false</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Means setting filled or not, need for parsing. </p>
-
-</div>
-</div>
-<a id="abcf434a299eede0b5dca0a280cb96615"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abcf434a299eede0b5dca0a280cb96615">&#9670;&nbsp;</a></span>inner_graph</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::map&lt;std::string, <a class="el" href="classyacl_1_1_setting.html">Setting</a>*&gt; yacl::Setting::inner_graph</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Node childs. </p>
-
-</div>
-</div>
-<a id="ac792fb8e8607035be0054aa72c070c79"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac792fb8e8607035be0054aa72c070c79">&#9670;&nbsp;</a></span>inner_graph_vec</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="classyacl_1_1_setting.html">Setting</a>*&gt; yacl::Setting::inner_graph_vec</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Vector where we holding setting while parsing. </p>
-
-</div>
-</div>
-<a id="a988d2fb17530fbf5181148f2a1da13b2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a988d2fb17530fbf5181148f2a1da13b2">&#9670;&nbsp;</a></span>setting_name</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string yacl::Setting::setting_name</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Node name. </p>
+<p class="definition">Definition at line <a class="el" href="settings_8h_source.html#l00067">67</a> of file <a class="el" href="settings_8h_source.html">settings.h</a>.</p>
 
 </div>
 </div>

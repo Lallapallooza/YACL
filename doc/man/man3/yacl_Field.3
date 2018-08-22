@@ -1,0 +1,326 @@
+.TH "yacl::Field" 3 "Wed Aug 22 2018" "YACL" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+yacl::Field \- YACL \fBField\fP class, that contains simple types of config\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <field\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBField\fP ()=delete"
+.br
+.RI "Default constructor deleted\&. "
+.ti -1c
+.RI "\fBField\fP (const \fBField\fP &other)=delete"
+.br
+.RI "Copy constructor deleted\&. "
+.ti -1c
+.RI "\fBField\fP & \fBoperator=\fP (const \fBField\fP &other)=delete"
+.br
+.RI "operator= deleted "
+.ti -1c
+.RI "\fBField\fP & \fBoperator=\fP (\fBField\fP &&other)=delete"
+.br
+.RI "Move operator= deleted\&. "
+.ti -1c
+.RI "\fBField\fP (std::string name) noexcept"
+.br
+.RI "Constructor with string\&. "
+.ti -1c
+.RI "\fBField\fP (\fBField\fP &&other) noexcept"
+.br
+.RI "Move constructor\&. "
+.ti -1c
+.RI "template<class T > \fBField\fP (const std::string &name, const T &value) noexcept"
+.br
+.ti -1c
+.RI "\fB~Field\fP ()"
+.br
+.RI "Destructor\&. "
+.ti -1c
+.RI "const std::string & \fBgetName\fP () const"
+.br
+.RI "Get field name const ref\&. "
+.ti -1c
+.RI "std::string \fBdebugString\fP () const"
+.br
+.RI "Get string for debug and show field content\&. "
+.ti -1c
+.RI "void \fBsetValue\fP (const bool &value)"
+.br
+.ti -1c
+.RI "void \fBsetValue\fP (const std::string &value)"
+.br
+.ti -1c
+.RI "void \fBsetValue\fP (const int &value)"
+.br
+.ti -1c
+.RI "void \fBsetValue\fP (const float &value)"
+.br
+.ti -1c
+.RI "void \fBsetValue\fP (const \fBint_vector\fP &value)"
+.br
+.ti -1c
+.RI "void \fBsetValue\fP (const \fBfloat_vector\fP &value)"
+.br
+.ti -1c
+.RI "void \fBsetValue\fP (const \fBbool_vector\fP &value)"
+.br
+.ti -1c
+.RI "void \fBsetValue\fP (const \fBstr_vector\fP &value)"
+.br
+.ti -1c
+.RI "void \fBsetValue\fP (const \fBint_initlist\fP &value)"
+.br
+.ti -1c
+.RI "void \fBsetValue\fP (const \fBfloat_initlist\fP &value)"
+.br
+.ti -1c
+.RI "void \fBsetValue\fP (const \fBstr_initlist\fP &value)"
+.br
+.ti -1c
+.RI "void \fBsetValue\fP (const \fBbool_initlist\fP &value)"
+.br
+.ti -1c
+.RI "template<class T , TEMPLATE_IS_SAME(T, int) > int \fBgetValue\fP () const noexcept"
+.br
+.ti -1c
+.RI "template<class T , TEMPLATE_IS_SAME(T, float) > float \fBgetValue\fP () const noexcept"
+.br
+.ti -1c
+.RI "template<class T , TEMPLATE_IS_SAME(T, bool) > bool \fBgetValue\fP () const noexcept"
+.br
+.ti -1c
+.RI "template<class T , TEMPLATE_IS_SAME(T, std::string) > std::string \fBgetValue\fP () const noexcept"
+.br
+.ti -1c
+.RI "template<class T , TEMPLATE_IS_SAME(T, float_vector) > \fBfloat_vector\fP \fBgetValue\fP () const noexcept"
+.br
+.ti -1c
+.RI "template<class T , TEMPLATE_IS_SAME(T, int_vector) > \fBint_vector\fP \fBgetValue\fP () const noexcept"
+.br
+.ti -1c
+.RI "template<class T , TEMPLATE_IS_SAME(T, bool_vector) > \fBbool_vector\fP \fBgetValue\fP () const noexcept"
+.br
+.ti -1c
+.RI "template<class T , TEMPLATE_IS_SAME(T, str_vector) > \fBstr_vector\fP \fBgetValue\fP () const noexcept"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+YACL \fBField\fP class, that contains simple types of config\&. 
+.PP
+Definition at line 18 of file field\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "yacl::Field::Field ()\fC [delete]\fP"
+
+.PP
+Default constructor deleted\&. 
+.SS "yacl::Field::Field (const \fBField\fP & other)\fC [delete]\fP"
+
+.PP
+Copy constructor deleted\&. 
+.SS "yacl::Field::Field (std::string name)\fC [explicit]\fP, \fC [noexcept]\fP"
+
+.PP
+Constructor with string\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP field name 
+.RE
+.PP
+
+.PP
+Definition at line 5 of file field\&.cpp\&.
+.SS "yacl::Field::Field (\fBField\fP && other)\fC [noexcept]\fP"
+
+.PP
+Move constructor\&. 
+.PP
+Definition at line 8 of file field\&.cpp\&.
+.SS "template<class T > yacl::Field::Field (const std::string & name, const T & value)\fC [noexcept]\fP"
+
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIT\fP type supported by ContentType, for example int, float, str_vector etc\&.
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP field name
+.br
+\fIvalue\fP value for field 
+.RE
+.PP
+
+.PP
+Definition at line 234 of file field\&.h\&.
+.SS "yacl::Field::~Field ()"
+
+.PP
+Destructor\&. 
+.PP
+Definition at line 19 of file field\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "std::string yacl::Field::debugString () const"
+
+.PP
+Get string for debug and show field content\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+field description 
+.RE
+.PP
+
+.PP
+Definition at line 23 of file field\&.cpp\&.
+.SS "const std::string & yacl::Field::getName () const"
+
+.PP
+Get field name const ref\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+field name 
+.RE
+.PP
+
+.PP
+Definition at line 22 of file field\&.cpp\&.
+.SS "template<class T , TEMPLATE_IS_SAME(T, int) > int yacl::Field::getValue () const\fC [inline]\fP, \fC [noexcept]\fP"
+
+.PP
+Definition at line 108 of file field\&.h\&.
+.SS "template<class T , TEMPLATE_IS_SAME(T, float) > float yacl::Field::getValue () const\fC [inline]\fP, \fC [noexcept]\fP"
+
+.PP
+Definition at line 111 of file field\&.h\&.
+.SS "template<class T , TEMPLATE_IS_SAME(T, bool) > bool yacl::Field::getValue () const\fC [inline]\fP, \fC [noexcept]\fP"
+
+.PP
+Definition at line 114 of file field\&.h\&.
+.SS "template<class T , TEMPLATE_IS_SAME(T, std::string) > std::string yacl::Field::getValue () const\fC [inline]\fP, \fC [noexcept]\fP"
+
+.PP
+Definition at line 117 of file field\&.h\&.
+.SS "template<class T , TEMPLATE_IS_SAME(T, float_vector) > \fBfloat_vector\fP yacl::Field::getValue () const\fC [inline]\fP, \fC [noexcept]\fP"
+
+.PP
+Definition at line 120 of file field\&.h\&.
+.SS "template<class T , TEMPLATE_IS_SAME(T, int_vector) > \fBint_vector\fP yacl::Field::getValue () const\fC [inline]\fP, \fC [noexcept]\fP"
+
+.PP
+Definition at line 123 of file field\&.h\&.
+.SS "template<class T , TEMPLATE_IS_SAME(T, bool_vector) > \fBbool_vector\fP yacl::Field::getValue () const\fC [inline]\fP, \fC [noexcept]\fP"
+
+.PP
+Definition at line 126 of file field\&.h\&.
+.SS "template<class T , TEMPLATE_IS_SAME(T, str_vector) > \fBstr_vector\fP yacl::Field::getValue () const\fC [inline]\fP, \fC [noexcept]\fP"
+
+.PP
+Definition at line 129 of file field\&.h\&.
+.SS "\fBField\fP& yacl::Field::operator= (const \fBField\fP & other)\fC [delete]\fP"
+
+.PP
+operator= deleted 
+.SS "\fBField\fP& yacl::Field::operator= (\fBField\fP && other)\fC [delete]\fP"
+
+.PP
+Move operator= deleted\&. 
+.SS "void yacl::Field::setValue (const bool & value)\fC [inline]\fP"
+
+.PP
+Definition at line 308 of file field\&.h\&.
+.SS "void yacl::Field::setValue (const std::string & value)\fC [inline]\fP"
+
+.PP
+Definition at line 294 of file field\&.h\&.
+.SS "void yacl::Field::setValue (const int & value)\fC [inline]\fP"
+
+.PP
+Definition at line 301 of file field\&.h\&.
+.SS "void yacl::Field::setValue (const float & value)\fC [inline]\fP"
+
+.PP
+Definition at line 315 of file field\&.h\&.
+.SS "void yacl::Field::setValue (const \fBint_vector\fP & value)\fC [inline]\fP"
+
+.PP
+Definition at line 257 of file field\&.h\&.
+.SS "void yacl::Field::setValue (const \fBfloat_vector\fP & value)\fC [inline]\fP"
+
+.PP
+Definition at line 280 of file field\&.h\&.
+.SS "void yacl::Field::setValue (const \fBbool_vector\fP & value)\fC [inline]\fP"
+
+.PP
+Definition at line 287 of file field\&.h\&.
+.SS "void yacl::Field::setValue (const \fBstr_vector\fP & value)\fC [inline]\fP"
+
+.PP
+Definition at line 246 of file field\&.h\&.
+.SS "void yacl::Field::setValue (const \fBint_initlist\fP & value)\fC [inline]\fP"
+
+.PP
+Definition at line 264 of file field\&.h\&.
+.SS "void yacl::Field::setValue (const \fBfloat_initlist\fP & value)\fC [inline]\fP"
+
+.PP
+Definition at line 268 of file field\&.h\&.
+.SS "void yacl::Field::setValue (const \fBstr_initlist\fP & value)\fC [inline]\fP"
+
+.PP
+Definition at line 276 of file field\&.h\&.
+.SS "void yacl::Field::setValue (const \fBbool_initlist\fP & value)\fC [inline]\fP"
+
+.PP
+Definition at line 272 of file field\&.h\&.
+.SH "Field Documentation"
+.PP 
+.SS "bool yacl::Field::bool_value"
+
+.PP
+Definition at line 210 of file field\&.h\&.
+.SS "float yacl::Field::float_value"
+
+.PP
+Definition at line 211 of file field\&.h\&.
+.SS "int yacl::Field::int_value = 0"
+
+.PP
+Definition at line 209 of file field\&.h\&.
+.SS "std::string* yacl::Field::string_value"
+
+.PP
+Definition at line 212 of file field\&.h\&.
+.SS "std::vector<bool>* yacl::Field::vector_bool_value"
+
+.PP
+Definition at line 214 of file field\&.h\&.
+.SS "std::vector<float>* yacl::Field::vector_float_value"
+
+.PP
+Definition at line 215 of file field\&.h\&.
+.SS "std::vector<int>* yacl::Field::vector_int_value"
+
+.PP
+Definition at line 213 of file field\&.h\&.
+.SS "std::vector<std::string *>* yacl::Field::vector_string_value"
+
+.PP
+Definition at line 216 of file field\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for YACL from the source code\&.

@@ -87,9 +87,7 @@ $(document).ready(function(){initNavTree('classyacl_1_1_y_a_c_l_exception.html',
 
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-attribs">Private Attributes</a> &#124;
-<a href="classyacl_1_1_y_a_c_l_exception-members.html">List of all members</a>  </div>
+<a href="#pub-methods">Public Member Functions</a>  </div>
   <div class="headertitle">
 <div class="title">yacl::YACLException Class Reference</div>  </div>
 </div><!--header-->
@@ -112,16 +110,13 @@ Inheritance diagram for yacl::YACLException:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a58f146a1db7847c9080e879509331a29"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyacl_1_1_y_a_c_l_exception.html#a58f146a1db7847c9080e879509331a29">YACLException</a> (const std::string &amp;message)</td></tr>
 <tr class="separator:a58f146a1db7847c9080e879509331a29"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad227c852507528f41cfa16ec19804e8"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyacl_1_1_y_a_c_l_exception.html#aad227c852507528f41cfa16ec19804e8">what</a> () const override</td></tr>
-<tr class="separator:aad227c852507528f41cfa16ec19804e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
-Private Attributes</h2></td></tr>
-<tr class="memitem:aa7cd0fcbd0e7bd76c881f5dafd847f96"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyacl_1_1_y_a_c_l_exception.html#aa7cd0fcbd0e7bd76c881f5dafd847f96">msg</a></td></tr>
-<tr class="separator:aa7cd0fcbd0e7bd76c881f5dafd847f96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb639ff8ed0427bfcf4d2bb5383a6812"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyacl_1_1_y_a_c_l_exception.html#aeb639ff8ed0427bfcf4d2bb5383a6812">what</a> () const noexcept override</td></tr>
+<tr class="separator:aeb639ff8ed0427bfcf4d2bb5383a6812"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>YACL Exception class. </p>
+
+<p class="definition">Definition at line <a class="el" href="exception_8h_source.html#l00010">10</a> of file <a class="el" href="exception_8h_source.html">exception.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a58f146a1db7847c9080e879509331a29"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a58f146a1db7847c9080e879509331a29">&#9670;&nbsp;</a></span>YACLException()</h2>
@@ -147,11 +142,13 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="exception_8h_source.html#l00012">12</a> of file <a class="el" href="exception_8h_source.html">exception.h</a>.</p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="aad227c852507528f41cfa16ec19804e8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aad227c852507528f41cfa16ec19804e8">&#9670;&nbsp;</a></span>what()</h2>
+<a id="aeb639ff8ed0427bfcf4d2bb5383a6812"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb639ff8ed0427bfcf4d2bb5383a6812">&#9670;&nbsp;</a></span>what()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -168,33 +165,12 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="aa7cd0fcbd0e7bd76c881f5dafd847f96"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa7cd0fcbd0e7bd76c881f5dafd847f96">&#9670;&nbsp;</a></span>msg</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const std::string yacl::YACLException::msg</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p class="definition">Definition at line <a class="el" href="exception_8h_source.html#l00015">15</a> of file <a class="el" href="exception_8h_source.html">exception.h</a>.</p>
 
 </div>
 </div>

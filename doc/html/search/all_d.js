@@ -1,11 +1,16 @@
 var searchData=
 [
-  ['raw_5fto_5fvector_5fbools',['raw_to_vector_bools',['../namespaceyacl.html#a2c2636786babe5768752e56374dbb254',1,'yacl']]],
-  ['raw_5fto_5fvector_5ffloats',['raw_to_vector_floats',['../namespaceyacl.html#a5ed0998c26272dedc83cdd239f2217af',1,'yacl']]],
-  ['raw_5fto_5fvector_5fints',['raw_to_vector_ints',['../namespaceyacl.html#a83c8789365da86109715eeefecd497b4',1,'yacl']]],
-  ['raw_5fto_5fvector_5fstrings',['raw_to_vector_strings',['../namespaceyacl.html#a45f406d8dc06cb0f032b62795b8c3040',1,'yacl']]],
-  ['rawvectortovectoroftype',['rawVectorToVectorOfType',['../namespaceyacl.html#a1ff6398577061a33a6a0b65e42c063d8',1,'yacl']]],
-  ['recdeletegraph',['recDeleteGraph',['../classyacl_1_1_setting.html#a5a56da18e738b5a05b1e817988b03555',1,'yacl::Setting']]],
-  ['rtrim',['rtrim',['../namespaceyacl.html#afc7408dced1d4245d9c9ea59de19cb1e',1,'yacl']]],
-  ['runtimecontenttostring',['runtimeContentToString',['../namespaceyacl.html#ae18452fe8d73a080e18de29e26554607',1,'yacl']]]
+  ['setting',['Setting',['../classyacl_1_1_setting.html',1,'yacl::Setting'],['../classyacl_1_1_setting.html#ae98702b1bb47a0bff7ef2b69b2fbf965',1,'yacl::Setting::Setting(Setting *base=nullptr, uint16_t dep=0) noexcept'],['../classyacl_1_1_setting.html#a8648b2d32a93bb09233ffd4ade16991e',1,'yacl::Setting::setting(const std::string &amp;name) const noexcept']]],
+  ['settings_2eh',['settings.h',['../settings_8h.html',1,'']]],
+  ['settings_5fptr_2ecpp',['settings_ptr.cpp',['../settings__ptr_8cpp.html',1,'']]],
+  ['settings_5fptr_2eh',['settings_ptr.h',['../settings__ptr_8h.html',1,'']]],
+  ['settingsuniqueptr',['SettingsUniquePtr',['../classyacl_1_1_settings_unique_ptr.html',1,'yacl::SettingsUniquePtr'],['../classyacl_1_1_settings_unique_ptr.html#af41cf4cff33e8dfe6be57cbf7f488bfa',1,'yacl::SettingsUniquePtr::SettingsUniquePtr(Setting *sett)'],['../classyacl_1_1_settings_unique_ptr.html#a654d3b5057e298f9fd0b652d43680efc',1,'yacl::SettingsUniquePtr::SettingsUniquePtr()=delete'],['../classyacl_1_1_settings_unique_ptr.html#ab364d58cd1fd74fcfd30ffb2920d2713',1,'yacl::SettingsUniquePtr::SettingsUniquePtr(const SettingsUniquePtr &amp;other)=delete'],['../classyacl_1_1_settings_unique_ptr.html#a4fa1e4311c47d004c806a178b3b2eb66',1,'yacl::SettingsUniquePtr::SettingsUniquePtr(SettingsUniquePtr &amp;&amp;other) noexcept']]],
+  ['setvalue',['setValue',['../classyacl_1_1_field.html#aa76950560b0814ac82d71f7e87d10885',1,'yacl::Field::setValue(const bool &amp;value)'],['../classyacl_1_1_field.html#a87c1263348b7f1fe9b6d3a46af07f88d',1,'yacl::Field::setValue(const std::string &amp;value)'],['../classyacl_1_1_field.html#aa419fce863a000f6c3f012c091371e7b',1,'yacl::Field::setValue(const int &amp;value)'],['../classyacl_1_1_field.html#a326c02fc3b78526fd6c9c847a8ce9b7f',1,'yacl::Field::setValue(const float &amp;value)'],['../classyacl_1_1_field.html#a1cca82fbcf8b34011b1bd93f897fa765',1,'yacl::Field::setValue(const int_vector &amp;value)'],['../classyacl_1_1_field.html#a05e102d0a4713b457b7106d0fc6a8586',1,'yacl::Field::setValue(const float_vector &amp;value)'],['../classyacl_1_1_field.html#a6a6f995646a141cf19c93e374988bd64',1,'yacl::Field::setValue(const bool_vector &amp;value)'],['../classyacl_1_1_field.html#a37d860641bfcb710cf68a908e2dafbce',1,'yacl::Field::setValue(const str_vector &amp;value)'],['../classyacl_1_1_field.html#af9b494e465bbc1fe748fab77783d9ea7',1,'yacl::Field::setValue(const int_initlist &amp;value)'],['../classyacl_1_1_field.html#a14299f33d55e14c54401a1b425f361ba',1,'yacl::Field::setValue(const float_initlist &amp;value)'],['../classyacl_1_1_field.html#a34dc62953726ad4b968fae488dbb6ec0',1,'yacl::Field::setValue(const str_initlist &amp;value)'],['../classyacl_1_1_field.html#a346298dc8eadbdef964f3bb59f1aa6f5',1,'yacl::Field::setValue(const bool_initlist &amp;value)']]],
+  ['str_5finitlist',['str_initlist',['../namespaceyacl.html#a76f270fb83740255c4b99102a2e1388f',1,'yacl']]],
+  ['str_5fvector',['str_vector',['../namespaceyacl.html#ac5fdb1b729187695dfad4f617f198ba4',1,'yacl']]],
+  ['string_5fvalue',['string_value',['../classyacl_1_1_field.html#a207bb9006149ad6e7c95e32e8563e257',1,'yacl::Field::string_value()'],['../namespaceyacl.html#a994628808c0af8d10900265aea4b166aaa833d6893ea57e4ffc5155cc2f44e6cb',1,'yacl::STRING_VALUE()']]],
+  ['strtobool',['strToBool',['../namespaceyacl.html#a2858f56b5132ebdf3623be5e17d3422e',1,'yacl']]],
+  ['strtofloat',['strToFloat',['../namespaceyacl.html#a2396b6671c6df3745d18eb4a763122fa',1,'yacl']]],
+  ['strtoint',['strToInt',['../namespaceyacl.html#a82c1e52830fdff600ecd36770e3bbecb',1,'yacl']]],
+  ['strtostr',['strToStr',['../namespaceyacl.html#a10559c8a6762b1072b7bf3fd09981844',1,'yacl']]]
 ];

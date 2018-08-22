@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['updatestringwithvector',['updateStringWithVector',['../classyacl_1_1_field.html#a9448b44b5bcf786541e4255e300f66c8',1,'yacl::Field::updateStringWithVector(T *vector, std::string *str) const'],['../classyacl_1_1_field.html#a23d1fcbec7b5f6d27d2746e41343473d',1,'yacl::Field::updateStringWithVector(std::vector&lt; std::string *&gt; *vector, std::string *str) const']]]
+  ['_7efield',['~Field',['../classyacl_1_1_field.html#a0539903298a7f3c78982201c4d60e38c',1,'yacl::Field']]],
+  ['_7esettingsuniqueptr',['~SettingsUniquePtr',['../classyacl_1_1_settings_unique_ptr.html#a4d239eb3caffba4b87ff2142519c893c',1,'yacl::SettingsUniquePtr']]]
 ];

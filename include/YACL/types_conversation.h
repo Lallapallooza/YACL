@@ -88,6 +88,7 @@ ContentType typeToContentTypeEnum() noexcept {
 template <class T, TEMPLATE_IS_SAME(T, int)>
 const char *typeToString() noexcept { return "INT"; }
 
+
 /**
  * \brief float to string converter
  * \return type name

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['last_5fclosed_5fbracket',['last_closed_bracket',['../structyacl_1_1_config_1_1_double_char_size__t_pair.html#a8fe1175c0692c6d046ea14318a60c562',1,'yacl::Config::DoubleCharSize_tPair']]],
-  ['ltrim',['ltrim',['../namespaceyacl.html#aa7e34b40b6041b4df41b62eb88488234',1,'yacl']]]
+  ['main',['main',['../example1_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;example1.cpp'],['../example2_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;example2.cpp'],['../example3_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;example3.cpp'],['../example4_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;example4.cpp'],['../example5_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;example5.cpp']]]
 ];

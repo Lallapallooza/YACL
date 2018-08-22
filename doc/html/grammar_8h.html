@@ -93,9 +93,6 @@ $(document).ready(function(){initNavTree('grammar_8h.html','');});
 <div class="title">grammar.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p>File with function for grammar routine.  
-<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;string&gt;</code><br />
 <code>#include &lt;<a class="el" href="types_8h_source.html">YACL/types.h</a>&gt;</code><br />
 </div>
@@ -108,40 +105,14 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:abb6b7fb544f2bc88ceaa544441a9d2a6"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceyacl.html#abb6b7fb544f2bc88ceaa544441a9d2a6">yacl::isInt</a> (const std::string &amp;str) noexcept</td></tr>
-<tr class="memdesc:abb6b7fb544f2bc88ceaa544441a9d2a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">str == int if all chars are digits  <a href="namespaceyacl.html#abb6b7fb544f2bc88ceaa544441a9d2a6">More...</a><br /></td></tr>
-<tr class="separator:abb6b7fb544f2bc88ceaa544441a9d2a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2080dee4254a624246e705e3e8213e96"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceyacl.html#a2080dee4254a624246e705e3e8213e96">yacl::isFloat</a> (const std::string &amp;str) noexcept</td></tr>
-<tr class="memdesc:a2080dee4254a624246e705e3e8213e96"><td class="mdescLeft">&#160;</td><td class="mdescRight">str == float if all chars are digits except 1, 1 must be '.'  <a href="namespaceyacl.html#a2080dee4254a624246e705e3e8213e96">More...</a><br /></td></tr>
-<tr class="separator:a2080dee4254a624246e705e3e8213e96"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e9dddabe592b81f66298d61c7ce89a7"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceyacl.html#a0e9dddabe592b81f66298d61c7ce89a7">yacl::isBool</a> (const std::string &amp;str) noexcept</td></tr>
-<tr class="memdesc:a0e9dddabe592b81f66298d61c7ce89a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">str == bool if 'true' or 'false'  <a href="namespaceyacl.html#a0e9dddabe592b81f66298d61c7ce89a7">More...</a><br /></td></tr>
-<tr class="separator:a0e9dddabe592b81f66298d61c7ce89a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0155e15c104075cdc2f6b949c9a753c1"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceyacl.html#a0155e15c104075cdc2f6b949c9a753c1">yacl::isString</a> (const std::string &amp;str) noexcept</td></tr>
-<tr class="memdesc:a0155e15c104075cdc2f6b949c9a753c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">str == string if begin and ends "  <a href="namespaceyacl.html#a0155e15c104075cdc2f6b949c9a753c1">More...</a><br /></td></tr>
-<tr class="separator:a0155e15c104075cdc2f6b949c9a753c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ec06f3d500a16d84e008b6304df2ad1"><td class="memItemLeft" align="right" valign="top">ContentType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceyacl.html#a5ec06f3d500a16d84e008b6304df2ad1">yacl::getTypeOfRaw</a> (const std::string &amp;str) noexcept</td></tr>
 <tr class="memdesc:a5ec06f3d500a16d84e008b6304df2ad1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get simple type from string simple: int, float, bool, string.  <a href="namespaceyacl.html#a5ec06f3d500a16d84e008b6304df2ad1">More...</a><br /></td></tr>
 <tr class="separator:a5ec06f3d500a16d84e008b6304df2ad1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f12fcb46b0a9a05fc986759d8ae9c14"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceyacl.html#a0f12fcb46b0a9a05fc986759d8ae9c14">yacl::isArrayOfSameType</a> (const std::string &amp;str, ContentType force_type=ContentType::NOT_INIT) noexcept</td></tr>
 <tr class="memdesc:a0f12fcb46b0a9a05fc986759d8ae9c14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detecting is array contain same type elements.  <a href="namespaceyacl.html#a0f12fcb46b0a9a05fc986759d8ae9c14">More...</a><br /></td></tr>
 <tr class="separator:a0f12fcb46b0a9a05fc986759d8ae9c14"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae69d604aaca93d128321ba864fa5c611"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceyacl.html#ae69d604aaca93d128321ba864fa5c611">yacl::isArrayOfIntegers</a> (const std::string &amp;str) noexcept</td></tr>
-<tr class="memdesc:ae69d604aaca93d128321ba864fa5c611"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detecting is array contain only int elements.  <a href="namespaceyacl.html#ae69d604aaca93d128321ba864fa5c611">More...</a><br /></td></tr>
-<tr class="separator:ae69d604aaca93d128321ba864fa5c611"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab01837481b2a441f27d7405d56e5c4ae"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceyacl.html#ab01837481b2a441f27d7405d56e5c4ae">yacl::isArrayOfFloats</a> (const std::string &amp;str) noexcept</td></tr>
-<tr class="memdesc:ab01837481b2a441f27d7405d56e5c4ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detecting is array contain only float elements.  <a href="namespaceyacl.html#ab01837481b2a441f27d7405d56e5c4ae">More...</a><br /></td></tr>
-<tr class="separator:ab01837481b2a441f27d7405d56e5c4ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0d01c59ef0b72ad333f12de5fd5186ce"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceyacl.html#a0d01c59ef0b72ad333f12de5fd5186ce">yacl::isArrayOfStrings</a> (const std::string &amp;str) noexcept</td></tr>
-<tr class="memdesc:a0d01c59ef0b72ad333f12de5fd5186ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detecting is array contain only string elements.  <a href="namespaceyacl.html#a0d01c59ef0b72ad333f12de5fd5186ce">More...</a><br /></td></tr>
-<tr class="separator:a0d01c59ef0b72ad333f12de5fd5186ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2dd72f658c9470e3772e2050245d6f0c"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceyacl.html#a2dd72f658c9470e3772e2050245d6f0c">yacl::isArrayOfBools</a> (const std::string &amp;str) noexcept</td></tr>
-<tr class="memdesc:a2dd72f658c9470e3772e2050245d6f0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detecting is array contain only bool elements.  <a href="namespaceyacl.html#a2dd72f658c9470e3772e2050245d6f0c">More...</a><br /></td></tr>
-<tr class="separator:a2dd72f658c9470e3772e2050245d6f0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>File with function for grammar routine. </p>
-</div></div><!-- contents -->
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

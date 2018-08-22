@@ -1,0 +1,55 @@
+.TH "src/helper/utils.h" 3 "Wed Aug 22 2018" "YACL" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/helper/utils.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <vector>\fP
+.br
+\fC#include <map>\fP
+.br
+\fC#include <functional>\fP
+.br
+\fC#include <string>\fP
+.br
+\fC#include <locale>\fP
+.br
+\fC#include <algorithm>\fP
+.br
+\fC#include <cctype>\fP
+.br
+\fC#include <cassert>\fP
+.br
+\fC#include <YACL/types\&.h>\fP
+.br
+
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fByacl\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBDELETE_AND_FORCE_NULL\fP(ptr)"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define DELETE_AND_FORCE_NULL(ptr)"
+\fBValue:\fP
+.PP
+.nf
+delete(ptr); \
+    ptr = nullptr
+.fi
+.PP
+Definition at line 19 of file utils\&.h\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for YACL from the source code\&.

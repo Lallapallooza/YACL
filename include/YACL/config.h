@@ -15,14 +15,15 @@ namespace yacl {
 */
 class Config {
 public:
-  
+
 
   /**
    * \brief Parse config from file
    * \param path file path
    * \return config root
    */
-  static SettingsUniquePtr parseConfigFromFile(const std::string &path) noexcept;
+  static SettingsUniquePtr
+  parseConfigFromFile(const std::string &path) noexcept;
 
 
   /**

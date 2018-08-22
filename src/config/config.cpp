@@ -41,7 +41,7 @@ yacl::Config::DoubleCharSize_tPair yacl::Config::fillNameAndMarkFields(
   return pair;
 }
 
-yacl::SettingsUniquePtr  yacl::Config::parseConfigFromFile(
+yacl::SettingsUniquePtr yacl::Config::parseConfigFromFile(
   const std::string &path) noexcept {
   std::ifstream t(path);
   std::string str((std::istreambuf_iterator<char>(t)),
@@ -130,7 +130,7 @@ yacl::SettingsUniquePtr yacl::Config::parseConfig(std::string conf) noexcept {
   }
 
   convertGraphRec(super_parent);
-  
+
   return SettingsUniquePtr(super_parent);
 }
 

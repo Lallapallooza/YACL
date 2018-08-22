@@ -1,0 +1,63 @@
+.TH "md__r_e_a_d_m_e" 3 "Wed Aug 22 2018" "YACL" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__r_e_a_d_m_e \- Yet Another Config Library for C++ 
+
+.SS "About"
+.PP
+YACL is a library for operating configs with large and complex hierarchy\&. Library is designed to be as simple as possible to read configs and operate on them in code\&.
+.PP
+.SS "Installation"
+.PP
+YACL is using cmake to build the project\&.
+.PP
+Build example provided below 
+.PP
+.nf
+$ mkdir build
+$ cd build
+$ cmake \&.\&. && cmake --build \&.
+
+.fi
+.PP
+.PP
+.SS "Documentation"
+.PP
+All documentation can be found in doc/ folder\&. It's generated with doxygen\&.
+.PP
+### Usage 
+.PP
+.nf
+#include <YACL/config\&.h>
+int main() {
+  yacl::Setting *root = yacl::Config::parseConfigFromFile("config\&.yacl");
+  yacl::Config::printConfig(root);
+
+  int var1 = *root->field("var1");
+  std::string var2 = *root->field("var2");
+  std::string var3 = *root->field("var3");
+
+  yacl::Setting::recDeleteGraph(root);
+  return 0;
+}
+
+.fi
+.PP
+.PP
+Other examples can be found in example/ folder\&.
+.PP
+.SS "Todo List"
+.PP
+.IP "\(bu" 2
+Add gtest
+.IP "\(bu" 2
+Add write functionality
+.IP "\(bu" 2
+Matrix type support
+.IP "\(bu" 2
+Python, Java, ObjC wrappers
+.IP "\(bu" 2
+Add crypt and convert to binary 
+.PP
+
