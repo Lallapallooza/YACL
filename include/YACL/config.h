@@ -6,6 +6,7 @@
 #include <vector>
 
 #include <YACL/settings.h>
+#include <YACL/settings_ptr.h>
 
 namespace yacl {
 
@@ -21,7 +22,7 @@ public:
    * \param path file path
    * \return config root
    */
-  static Setting *parseConfigFromFile(const std::string &path) noexcept;
+  static SettingsUniquePtr parseConfigFromFile(const std::string &path) noexcept;
 
 
   /**
@@ -29,7 +30,7 @@ public:
    * \param conf raw config
    * \return config root
    */
-  static Setting *parseConfig(std::string conf) noexcept;
+  static SettingsUniquePtr parseConfig(std::string conf) noexcept;
 
 
   /**
@@ -37,7 +38,7 @@ public:
    * \param sett root 
    * \param n_tabs tabs for formatting
    */
-  static void printConfig(Setting *sett, uint16_t n_tabs = 1) noexcept;
+  static void printConfig(const Setting *sett, uint16_t n_tabs = 1) noexcept;
 
 private:
 

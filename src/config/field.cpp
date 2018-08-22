@@ -8,8 +8,11 @@ yacl::Field::Field(std::string name) noexcept
 yacl::Field::Field(Field &&other) noexcept
   : field_name(std::move(other.field_name)),
     type(other.type) {
-  int_value = other.int_value;
-  other.int_value = 0;
+
+  // x64 vectors sizeof = 8
+  // x86 vectors sizeof = 4
+  vector_int_value = other.vector_int_value;
+  other.vector_int_value = nullptr;
   other.type = ContentType::NOT_INIT;
 }
 

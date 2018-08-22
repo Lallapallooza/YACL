@@ -1,43 +1,31 @@
 #pragma once
 
 #include <YACL/types.h>
+#include <iostream>
 
 namespace yacl {
 
-
-  #define TEMPLATE_IS_SAME(firstT, secondT)                                 \
+#define TEMPLATE_IS_SAME(firstT, secondT)                                 \
   typename std::enable_if<std::is_same<firstT, secondT>::value>::type * = \
       nullptr
 
-  #define TEMPLATE_IS_NOT_SAME(firstT, secondT)                                 \
+#define TEMPLATE_IS_NOT_SAME(firstT, secondT)                              \
   typename std::enable_if<!std::is_same<firstT, secondT>::value>::type * = \
       nullptr
-
-/**
- * \brief Generic type to ContentType converter
- * \return ContentType
- */
-template <class T>
-inline ContentType typeToContentTypeEnum() noexcept {
-  static_assert(false, "Invalid input type in typeToContentTypeEnum");
-  return ContentType::NOT_INIT;
-}
 
 /**
  * \brief int to ContentType converter
  * \return ContentType
  */
-template <>
-inline ContentType typeToContentTypeEnum<int>() noexcept {
-  return ContentType::INT_VALUE;
-}
+template <class T, TEMPLATE_IS_SAME(T, int)>
+ContentType typeToContentTypeEnum() noexcept { return ContentType::INT_VALUE; }
 
 /**
  * \brief float to ContentType converter
  * \return ContentType
  */
-template <>
-inline ContentType typeToContentTypeEnum<float>() noexcept {
+template <class T, TEMPLATE_IS_SAME(T, float)>
+ContentType typeToContentTypeEnum() noexcept {
   return ContentType::FLOAT_VALUE;
 }
 
@@ -45,17 +33,15 @@ inline ContentType typeToContentTypeEnum<float>() noexcept {
  * \brief bool to ContentType converter
  * \return ContentType
  */
-template <>
-inline ContentType typeToContentTypeEnum<bool>() noexcept {
-  return ContentType::BOOL_VALUE;
-}
+template <class T, TEMPLATE_IS_SAME(T, bool)>
+ContentType typeToContentTypeEnum() noexcept { return ContentType::BOOL_VALUE; }
 
 /**
  * \brief string to ContentType converter
  * \return ContentType
  */
-template <>
-inline ContentType typeToContentTypeEnum<std::string>() noexcept {
+template <class T, TEMPLATE_IS_SAME(T, std::string)>
+ContentType typeToContentTypeEnum() noexcept {
   return ContentType::STRING_VALUE;
 }
 
@@ -63,8 +49,8 @@ inline ContentType typeToContentTypeEnum<std::string>() noexcept {
  * \brief int_vector to ContentType converter
  * \return ContentType
  */
-template <>
-inline ContentType typeToContentTypeEnum<int_vector>() noexcept {
+template <class T, TEMPLATE_IS_SAME(T, int_vector)>
+ContentType typeToContentTypeEnum() noexcept {
   return ContentType::VECTOR_INT_VALUE;
 }
 
@@ -72,8 +58,8 @@ inline ContentType typeToContentTypeEnum<int_vector>() noexcept {
  * \brief float_vector to ContentType converter
  * \return ContentType
  */
-template <>
-inline ContentType typeToContentTypeEnum<float_vector>() noexcept {
+template <class T, TEMPLATE_IS_SAME(T, float_vector)>
+ContentType typeToContentTypeEnum() noexcept {
   return ContentType::VECTOR_FLOAT_VALUE;
 }
 
@@ -81,8 +67,8 @@ inline ContentType typeToContentTypeEnum<float_vector>() noexcept {
  * \brief bool_vector to ContentType converter
  * \return ContentType
  */
-template <>
-inline ContentType typeToContentTypeEnum<bool_vector>() noexcept {
+template <class T, TEMPLATE_IS_SAME(T, bool_vector)>
+ContentType typeToContentTypeEnum() noexcept {
   return ContentType::VECTOR_BOOL_VALUE;
 }
 
@@ -90,92 +76,66 @@ inline ContentType typeToContentTypeEnum<bool_vector>() noexcept {
  * \brief strt_vector to ContentType converter
  * \return ContentType
  */
-template <>
-inline ContentType typeToContentTypeEnum<str_vector>() noexcept {
+template <class T, TEMPLATE_IS_SAME(T, str_vector)>
+ContentType typeToContentTypeEnum() noexcept {
   return ContentType::VECTOR_STRING_VALUE;
-}
-
-/**
- * \brief Generic type to string converter
- * \return type name
- */
-template <class T>
-inline const char *typeToString() noexcept {
-  static_assert(false, "Invalid input type in typeToString");
-  return "FATAL_ERROR";
 }
 
 /**
  * \brief int to string converter
  * \return type name
  */
-template <>
-inline const char *typeToString<int>() noexcept {
-  return "INT";
-}
+template <class T, TEMPLATE_IS_SAME(T, int)>
+const char *typeToString() noexcept { return "INT"; }
 
 /**
  * \brief float to string converter
  * \return type name
  */
-template <>
-inline const char *typeToString<float>() noexcept {
-  return "FLOAT";
-}
+template <class T, TEMPLATE_IS_SAME(T, float)>
+const char *typeToString() noexcept { return "FLOAT"; }
 
 /**
  * \brief bool to string converter
  * \return type name
  */
-template <>
-inline const char *typeToString<bool>() noexcept {
-  return "BOOL";
-}
+template <class T, TEMPLATE_IS_SAME(T, bool)>
+const char *typeToString() noexcept { return "BOOL"; }
 
 /**
  * \brief string to string converter
  * \return type name
  */
-template <>
-inline const char *typeToString<std::string>() noexcept {
-  return "STRING";
-}
+template <class T, TEMPLATE_IS_SAME(T, std::string)>
+const char *typeToString() noexcept { return "STRING"; }
 
 /**
  * \brief int_vector to string converter
  * \return type name
  */
-template <>
-inline const char *typeToString<int_vector>() noexcept {
-  return "ARRAY INT";
-}
+template <class T, TEMPLATE_IS_SAME(T, int_vector)>
+const char *typeToString() noexcept { return "ARRAY INT"; }
 
 /**
  * \brief float_vector to string converter
  * \return type name
  */
-template <>
-inline const char *typeToString<float_vector>() noexcept {
-  return "ARRAY FLOAT";
-}
+template <class T, TEMPLATE_IS_SAME(T, float_vector)>
+const char *typeToString() noexcept { return "ARRAY FLOAT"; }
 
 /**
  * \brief bool_vector to string converter
  * \return type name
  */
-template <>
-inline const char *typeToString<bool_vector>() noexcept {
-  return "ARRAY BOOL";
-}
+template <class T, TEMPLATE_IS_SAME(T, bool_vector)>
+const char *typeToString() noexcept { return "ARRAY BOOL"; }
 
 /**
  * \brief str_vector to string converter
  * \return type name
  */
-template <>
-inline const char *typeToString<str_vector>() noexcept {
-  return "ARRAY STRING";
-}
+template <class T, TEMPLATE_IS_SAME(T, str_vector)>
+const char *typeToString() noexcept { return "ARRAY STRING"; }
 
 /**
  * \brief Generic ContentType to real type converter
@@ -255,18 +215,10 @@ struct ContentTypeToType<ContentType::VECTOR_FLOAT_VALUE> {
  * \return real type name
  */
 static inline const char *runtimeContentToString(ContentType type) {
-  if (type == ContentType::INT_VALUE) {
-    return typeToString<int>();
-  }
-  if (type == ContentType::FLOAT_VALUE) {
-    return typeToString<float>();
-  }
-  if (type == ContentType::BOOL_VALUE) {
-    return typeToString<bool>();
-  }
-  if (type == ContentType::STRING_VALUE) {
-    return typeToString<std::string>();
-  }
+  if (type == ContentType::INT_VALUE) { return typeToString<int>(); }
+  if (type == ContentType::FLOAT_VALUE) { return typeToString<float>(); }
+  if (type == ContentType::BOOL_VALUE) { return typeToString<bool>(); }
+  if (type == ContentType::STRING_VALUE) { return typeToString<std::string>(); }
   if (type == ContentType::VECTOR_INT_VALUE) {
     return typeToString<int_vector>();
   }

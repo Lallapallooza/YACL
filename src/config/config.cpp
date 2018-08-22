@@ -5,6 +5,7 @@
 
 
 #include <YACL/settings.h>
+#include <YACL/settings_ptr.h>
 #include <YACL/config.h>
 
 #include <helper/utils.h>
@@ -40,7 +41,7 @@ yacl::Config::DoubleCharSize_tPair yacl::Config::fillNameAndMarkFields(
   return pair;
 }
 
-yacl::Setting *yacl::Config::parseConfigFromFile(
+yacl::SettingsUniquePtr  yacl::Config::parseConfigFromFile(
   const std::string &path) noexcept {
   std::ifstream t(path);
   std::string str((std::istreambuf_iterator<char>(t)),
@@ -48,7 +49,7 @@ yacl::Setting *yacl::Config::parseConfigFromFile(
   return parseConfig(std::move(str));
 }
 
-yacl::Setting *yacl::Config::parseConfig(std::string conf) noexcept {
+yacl::SettingsUniquePtr yacl::Config::parseConfig(std::string conf) noexcept {
 
   std::queue<PairPrior> brackets_to_be_parsed;
   conf = "root = {" + conf + '}';
@@ -129,11 +130,11 @@ yacl::Setting *yacl::Config::parseConfig(std::string conf) noexcept {
   }
 
   convertGraphRec(super_parent);
-
-  return super_parent;
+  
+  return SettingsUniquePtr(super_parent);
 }
 
-void yacl::Config::printConfig(Setting *sett, uint16_t n_tabs) noexcept {
+void yacl::Config::printConfig(const Setting *sett, uint16_t n_tabs) noexcept {
 
   const auto print_tabs = [](int tabs) {
     for (uint16_t i = 0; i < tabs; ++i) { std::cout << '\t'; }
