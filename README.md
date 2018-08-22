@@ -21,14 +21,13 @@ It's generated with doxygen.
 ```cpp 
 #include <YACL/config.h>
 int main() {
-  yacl::Setting *root = yacl::Config::parseConfigFromFile("config.yacl");
-  yacl::Config::printConfig(root);
+  const yacl::SettingsUniquePtr root = yacl::Config::parseConfigFromFile("config.yacl");
+  yacl::Config::printConfig(*root);
 
   int var1 = *root->field("var1");
   std::string var2 = *root->field("var2");
   std::string var3 = *root->field("var3");
 
-  yacl::Setting::recDeleteGraph(root);
   return 0;
 }
 ```
