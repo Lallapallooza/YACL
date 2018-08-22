@@ -2,7 +2,13 @@
 
 ### About
 YACL is a library for operating configs with large and complex hierarchy. Library is designed to be as simple as possible to read configs and operate on them in code.
-  
+
+### Tested OS/Compilers
+ - Windows 10, MSVC 1914
+ - Ubuntu 16.04, Clang 5.0.1
+ - Ubuntu 16.04, G++ 5.4.0
+
+
 ### Installation
 YACL is using cmake to build the project.
 
