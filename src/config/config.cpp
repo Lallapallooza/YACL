@@ -69,17 +69,14 @@ yacl::SettingsUniquePtr yacl::Config::parseConfig(std::string conf) noexcept {
     std::string name;
     const DoubleCharSize_tPair pair = fillNameAndMarkFields(raw_config, &name);
 
-    std::vector<std::string> inner_fields = smart_bracket_split(
-                                                                raw_config.
-                                                                substr(pair.
-                                                                       ind_first
-                                                                       + 1,
-                                                                       pair.
-                                                                       ind_second
-                                                                       - pair.
-                                                                       ind_first
-                                                                       - 1),
-                                                                ',', ';');
+    std::vector<std::string> inner_fields = 
+      smart_bracket_split(
+        raw_config.substr(pair.ind_first + 1,
+                          pair.ind_second - pair.ind_first - 1
+        ), 
+      ',', 
+      ';'
+    );
 
     std::vector<size_t> idx_for_pop;
 
