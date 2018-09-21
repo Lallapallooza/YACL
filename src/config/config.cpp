@@ -71,12 +71,10 @@ yacl::SettingsUniquePtr yacl::Config::parseConfig(std::string conf) noexcept {
 
     std::vector<std::string> inner_fields = 
       smart_bracket_split(
-        raw_config.substr(pair.ind_first + 1,
-                          pair.ind_second - pair.ind_first - 1
-        ), 
-      ',', 
-      ';'
-    );
+        raw_config.substr(pair.ind_first + 1, pair.ind_second - pair.ind_first - 1), 
+        ',', 
+        ';'
+      );
 
     std::vector<size_t> idx_for_pop;
 
